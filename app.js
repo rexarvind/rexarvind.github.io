@@ -1,6 +1,8 @@
 function _(id){
 return document.getElementById(id)}
 
+function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+
 function imgOpen(el){
 let modal=new bootstrap.Modal(_("imgModal"));
 _("imgModalSrc").src=el.src;
@@ -9,7 +11,7 @@ modal.toggle()}
 
 function updateViews(){
 fetch('https://api.countapi.xyz/update/rexarvind/home/?amount=1').then(res=>res.json())
-.then(res=>{_("pageViews").innerText=res.value
+.then(res=>{_("pageViews").innerText=numberWithCommas(res.value)
 })}
 updateViews();
 

@@ -1,5 +1,7 @@
 body {font-family:'Rubik', sans-serif}
 
+
+
 .navbar {background-color:#222222 !important}
 
 .navbar-toggler .navbar-toggler-icon {background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(220,220,220,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")}
@@ -68,5 +70,3 @@ backface-visibility: hidden}
 2%, 18% {transform:translate3d(-1px, 0, 0)}
 4%, 16% {transform:translate3d(2px, 0, 0)}
 6%, 10%, 14% {transform:translate3d(-4px, 0, 0)} 8%, 12% {transform: translate3d(4px, 0, 0)} }
-
-.certificates img {width:24%}

@@ -16,14 +16,19 @@
 <meta name="MobileOptimized" content="560" />
 <meta name="robots" content="index,follow" />
 
-<link rel="canonical" href="https://www.rexarvind.me/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="canonical" href="https://rexarvind.github.io/">
+<link rel="preconnect" href="https://rexarvind.github.io/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin
+<link rel="preconnect" href="https://api.countapi.xyz/" crossorigin>
 
-<link rel="stylesheet" href="lib/bootstrap.min.css" />
-<link rel="stylesheet" href="main.css" />
-<link rel="stylesheet" href="style.css" />
+<link rel="preload" href="lib/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="lib/bootstrap.min.css"></noscript>
+<link rel="preload" href="main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="main.css"></noscript>
+<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
 
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"></noscript>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -64,7 +69,7 @@
 </head><body class="d-flex flex-column h-100 bg-light">
 <!-- header start -->
 <header>
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-1 border-bottom">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-1 border-bottom border-secondary">
 <div class="container-lg">
 
 <a class="navbar-brand font-weight-bold" href="index.html">
@@ -79,9 +84,6 @@
 <ul class="navbar-nav ml-auto font-weight-bold">
 <li class="nav-item text-center">
 <a href="projects/index.html" class="nav-link">Projects</a></li>
-
-<li class="nav-item text-center">
-<a href="note/index.html" class="nav-link">Coming Soon</a></li>
 
 </ul>
 </div>
@@ -100,13 +102,13 @@
 <div class="col-sm-6">
 <h1>Get Your Own Piece of Internet, Today&#33;</h1>
 <p>We solve your website needs in plausible way with a casual discussion about website requirements and target audience. If you need a fast, affordable and designer website with an app like experience, then you are at the right place.</p>
-<a href="projects/index.html" class="btn btn-dark shake">All Projects</a>
-<button id="liteApp" class="btn btn-outline-dark ml-2 d-none">Lite App</button>
+<a href="projects/index.html" class="btn btn-dark shake">View Projects</a>
+<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello%2C%20Arvind%0AI%20have%20a%20project%20for%20you..." class="btn btn-secondary ml-2 border">Hire Now</a>
 </div>
 
 <div class="col-sm-6">
 
-<div id="heroCarousel" class="carousel slide carousel-dark" data-ride="carousel">
+<div id="heroCarousel" class="carousel slide" data-ride="carousel">
 
 <div class="carousel-inner rounded">
 <div class="carousel-item active">
@@ -120,10 +122,10 @@
 </div>
 </div>
 <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="carousel-control-prev-icon border rounded bg-dark" aria-hidden="true"></span>
 </a>
 <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="carousel-control-next-icon border rounded bg-dark" aria-hidden="true"></span>
 </a>
 </div>
 </div>
@@ -131,11 +133,11 @@
 </div>
 
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- hero area end -->
 
 <!-- features area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row g-2">
 <div class="col-sm-5">
@@ -158,11 +160,11 @@
 </div>
 </div>
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- features area end -->
 
 <!-- service area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row g-1">
 <div class="col-sm-4">
@@ -190,11 +192,11 @@
 </div>
 </div>
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- service area end -->
 
 <!-- pricing area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row">
 <div class="col-sm-6">
@@ -231,11 +233,11 @@
 </div>
 </div>
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- pricing area end -->
 
 <!-- process area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row g-2">
 <div class="col-sm-5">
@@ -274,11 +276,11 @@
 </div>
 </div>
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- process area end -->
 
 <!-- about area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row">
 <div class="col-sm-4">
@@ -288,21 +290,21 @@
 <h2>About Developer</h2>
 <p>Hi, I am Arvind Kumar, front-end web developer. I create websites for business owners like you, so you can focus on getting your clients happier and satisfied. When I build your website, I use the perfect combination of my skills and experience as a developer and designer.</p>
 
-<div class="certificates">
-<img src="img/rexarvind-web-services-rwd.webp" alt="Responsive Web Design Certificate" class="img-fluid rounded" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-fel.webp" alt="Front End Libraries Certificate" class="img-fluid rounded" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-jads.webp" alt="JavaScript Algorithms and Data Structures Certificate" class="img-fluid rounded" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-dv.webp" alt="Data Visualisation Certificate" class="img-fluid rounded" onclick="imgOpen(this)" />
+<div class="row g-2">
+<img src="img/rexarvind-web-services-rwd.webp" alt="Responsive Web Design Certificate" class="col-3" onclick="imgOpen(this)" />
+<img src="img/rexarvind-web-services-fel.webp" alt="Front End Libraries Certificate" class="col-3" onclick="imgOpen(this)" />
+<img src="img/rexarvind-web-services-jads.webp" alt="JavaScript Algorithms and Data Structures Certificate" class="col-3" onclick="imgOpen(this)" />
+<img src="img/rexarvind-web-services-dv.webp" alt="Data Visualisation Certificate" class="col-3" onclick="imgOpen(this)" />
 </div>
 
 </div>
 </div>
 
-<hr class="mt-4"></div>
+<hr class="mt-4 mb-0"></div>
 <!-- about area end -->
 
 <!-- contact area start -->
-<div class="container-lg pt-4">
+<div class="container-lg pt-5">
 
 <div class="row">
 <div class="col-sm-6">
@@ -315,7 +317,7 @@
 <a href="https://twitter.com/rexarvind" target="_blank" rel="noopener noreferer" aria-label="rexarvind twitter"><i class="icon-twitter-square"></i></a>
 <a href="https://github.com/rexarvind" target="_blank" rel="noopener noreferer" aria-label="rexarvind github"><i class="icon-github"></i></a>
 <a href="https://www.instagram.com/rexarvind/" target="_blank" rel="noopener noreferer" aria-label="rexarvind instagram"><i class="icon-instagram"></i></a>
-<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello,%20Arvind"><i class="icon-whatsapp"></i></a>
+<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello,%20Arvind" aria-label="rexarvind WhatsApp"><i class="icon-whatsapp"></i></a>
 </p>
 </div>
 <div class="col-sm-6">
@@ -363,22 +365,24 @@
 <img src="img/hd720.png" id="imgModalSrc" class="img-fluid" alt="...">
 <p id="imgModalAlt" class="text-center p-2 mb-0"></p>
 </div>
+
 </div>
 </div>
 <!-- modal of img lightbox end -->
 
 
+
 <!-- floating btn start -->
 <div class="position-fixed bottom-0 right-0 m-2">
-
-<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello,%20Arvind" class="btn btn-dark border border-secondary">Chat</a>
+<button id="liteApp" class="btn btn-dark btn-sm mr-1 shake d-none">Lite App</button>
+<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello,%20Arvind" aria-label="WhatsApp Chat" class="btn btn-success btn-sm">Chat</a>
 </div>
 <!-- floating btn end -->
 
 </main>
 
 <!-- footer start -->
-<footer class="footer mt-auto pt-2 pb-4 bg-dark text-light">
+<footer class="footer mt-auto pt-2 pb-5 bg-dark text-light">
 <div class="container-lg">
 
 <div class="row gx-2 align-items-center">

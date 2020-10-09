@@ -1,6 +1,6 @@
 body {font-family:'Rubik', sans-serif}
 
-
+img.lazyload:not([src]){visibility:hidden} 
 
 .navbar {background-color:#222222 !important}
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<urlset xmlns="http://www.google.com/schemas/sitemap/0.84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+		<url>
+			<loc>https://rexarvind.netlify.app/</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/#</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/goop.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/mario.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/diamondhead.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/mario-complete.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/hind-theatre.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/diwali-2019.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/christmas-2019.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/gallery/get-paid-more-and-promoted-faster.webp</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/tel:+91-81810-40977</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/mailto:thatisarvind@gmail.com</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+		<url>
+			<loc>https://rexarvind.netlify.app/store/index.html</loc>
+			<changefreq>yearly</changefreq>
+		</url>
+
+	</urlset>
+

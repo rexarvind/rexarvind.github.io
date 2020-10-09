@@ -1,0 +1,72 @@
+body {font-family:'Rubik', sans-serif}
+
+.navbar {background-color:#222222 !important}
+
+.navbar-toggler .navbar-toggler-icon {background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(220,220,220,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")}
+
+.btn-dark {
+background-color:#222222 !important;
+border-color:#222222 !important}
+
+/*
+.btn-dark:hover, .btn-dark.active, .btn-dark:active {background-color:#444444 !important;
+border-color:#222222 !important;
+box-shadow:0 0 0 0.25rem rgba(22,22,22,0.25) !important}*/
+
+.table-dark th {background-color:#222222 !important}
+
+
+
+.btn-close:hover, .btn-close.active, .btn-close:active {box-shadow:0 0 0 0.25rem rgba(22,22,22,0.25) !important}
+
+.border {border-color:#222222 ! important}
+
+
+.border-secondary {
+border-color:#444444 !important}
+
+.card {border-color:#222222 !important}
+
+.shadow {box-shadow:0 0.5rem 1rem rgba(22,22,22,0.25) !important}
+
+
+
+
+
+.footer {background-color:#222222 !important}
+
+
+
+#socialIcons a {text-decoration:none;
+font-size:32px;
+color:#222222;
+margin-right:2px; padding:5px}
+
+#socialIcons a:hover {
+color: rgba(22,22,22,0.8)
+}
+
+.form-control:focus {border-color:#222222;
+box-shadow:0 0 0 0.2rem rgba(22,22,22,0.25)}
+
+.form-check-input:focus {border-color:#222222;
+box-shadow:0 0 0 0.2rem rgba(22,22,22,0.25)}
+
+.form-check-input:checked {border-color:#222222;background-color:#222222}
+
+
+
+.img-float {animation:imgFloat 2s infinite ease} @keyframes imgFloat {
+0%{margin-top:1rem; margin-bottom:0}
+40%{margin-top:0; margin-bottom:1rem}
+100%{margin-top:1rem; margin-bottom:0} }
+
+.shake {animation:shake 3s infinite;
+transform: translate3d(0, 0, 0);
+backface-visibility: hidden}
+@keyframes shake {
+2%, 18% {transform:translate3d(-1px, 0, 0)}
+4%, 16% {transform:translate3d(2px, 0, 0)}
+6%, 10%, 14% {transform:translate3d(-4px, 0, 0)} 8%, 12% {transform: translate3d(4px, 0, 0)} }
+
+.certificates img {width:24%}

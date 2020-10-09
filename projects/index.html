@@ -43,9 +43,6 @@
 <li class="nav-item text-center">
 <a href="../index.html" class="nav-link">Home</a></li>
 
-<li class="nav-item text-center">
-<a href="../note/index.html" class="nav-link">Coming Soon</a></li>
-
 </ul>
 </div>
 
@@ -64,7 +61,7 @@
 
 <div class="col-sm-6 col-md-4">
 <div class="card shadow">
-<img src="ranjan-commerce-tutorials.webp" class="card-img-top" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)">
+<img data-src="ranjan-commerce-tutorials.webp" class="lazyload card-img-top" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)">
 <div class="card-body p-2 position-relative">
 <a href="https://ranjancommercetutorials.000webhostapp.com/" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
 <p class="card-text pt-2">Ranjan Commerce Tutorials</p>
@@ -72,7 +69,7 @@
 
 <div class="col-sm-6 col-md-4">
 <div class="card shadow">
-<img src="darpan-agarbatti.webp" class="card-img-top" alt="Darpan Agarbatti" onclick="imgOpen(this)">
+<img data-src="darpan-agarbatti.webp" class="lazyload card-img-top" alt="Darpan Agarbatti" onclick="imgOpen(this)">
 <div class="card-body p-2 position-relative">
 <a href="https://darpanagarbatti.netlify.app/" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
 <p class="card-text pt-2">Darpan Agarbatti</p>
@@ -80,7 +77,7 @@
 
 <div class="col-sm-6 col-md-4">
 <div class="card shadow">
-<img src="lucky-charm-girl.webp" class="card-img-top" alt="LCG Studio" onclick="imgOpen(this)">
+<img data-src="lucky-charm-girl.webp" class="lazyload card-img-top" alt="LCG Studio" onclick="imgOpen(this)">
 <div class="card-body p-2 position-relative">
 <a href="https://luckycharmgirl.github.io/" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
 <p class="card-text pt-2">LCG Studio</p>
@@ -106,7 +103,7 @@
 <h5 class="modal-title">RexArvind<span class="text-muted">.me</span></h5>
 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
 </div>
-<img src="img/hd720.png" id="imgModalSrc" class="img-fluid" alt="...">
+<img data-src="" src="" id="imgModalSrc" class="lazyload img-fluid" alt="...">
 <p id="imgModalAlt" class="text-center p-2 mb-0"></p>
 </div>
 </div>
@@ -150,6 +147,6 @@
 </div>
 </footer>
 <!-- footer end -->
-
+<script src="../lib/lazysizes.min.js"></script>
 <script src="../lib/bootstrap.bundle.min.js"></script>
 <script src="../app.js"></script></body></html>

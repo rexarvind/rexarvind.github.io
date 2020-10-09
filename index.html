@@ -73,7 +73,7 @@
 <div class="container-lg">
 
 <a class="navbar-brand font-weight-bold" href="index.html">
-<img src="img/logo.webp" alt="" width="30" height="30" class="d-inline-block align-top rounded mr-2 border border-secondary">RexArvind<span class="text-muted">.me</span>
+<img data-src="img/logo.webp" alt="" width="30" height="30" class="lazyload d-inline-block align-top rounded mr-2 border border-secondary">RexArvind<span class="text-muted">.me</span>
 </a>
 
 <button class="navbar-toggler shadow-none border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,19 +112,19 @@
 
 <div class="carousel-inner rounded">
 <div class="carousel-item active">
-<img src="img/rct.webp" class="d-block w-100" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)" />
+<img data-src="img/rct.webp" class="lazyload d-block w-100" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)" />
 </div>
 <div class="carousel-item">
-<img src="img/bffb.webp" class="d-block w-100" alt="Be Fit For Benefit" onclick="imgOpen(this)" />
+<img data-src="img/bffb.webp" class="lazyload d-block w-100" alt="Be Fit For Benefit" onclick="imgOpen(this)" />
 </div>
 <div class="carousel-item">
-<img src="img/netfliks.webp" class="d-block w-100" alt="Nelfliks Landing Page" onclick="imgOpen(this)" />
+<img data-src="img/netfliks.webp" class="lazyload d-block w-100" alt="Nelfliks Landing Page" onclick="imgOpen(this)" />
 </div>
 </div>
-<a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+<a class="carousel-control-prev" href="#heroCarousel" aria-label="previous" role="button" data-slide="prev">
 <span class="carousel-control-prev-icon border rounded bg-dark" aria-hidden="true"></span>
 </a>
-<a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+<a class="carousel-control-next" href="#heroCarousel" aria-label="next" role="button" data-slide="next">
 <span class="carousel-control-next-icon border rounded bg-dark" aria-hidden="true"></span>
 </a>
 </div>
@@ -147,15 +147,15 @@
 <p>Websites made by us are better than others because we consider minor details and apply minimalistic approach to achieve perfection. In simple words, no useless bells and whistles.</p>
 </div>
 <div class="col-sm-4">
-<h4>Lightweight &amp; Optimised</h4>
+<h3>Lightweight &amp; Optimised</h3>
 <p>Did you noticed how fast this website loaded, and that&apos;s without even caching anything at all. Now you can imagine how fast your website could be with caching all static resources.</p>
 </div>
 <div class="col-sm-4">
-<h4>Saving Your Bandwidth Quota</h4>
+<h3>Saving Your Bandwidth Quota</h3>
 <p>We don&apos;t use heavy frameworks and plugins which unnecessarily cost you money and speed. Instead we design everything from scratch to help you save a plausible amount of money.<p>
 </div>
 <div class="col-sm-4">
-<h4>Independent Development</h4>
+<h3>Independent Development</h3>
 <p>Neither WordPress, Wix, Webflow nor jQuery. We use vanilla HTML, CSS and JavaScript, this makes our code easy to understand and modify for every developer.</p>
 </div>
 </div>
@@ -284,17 +284,17 @@
 
 <div class="row">
 <div class="col-sm-4">
-<img src="img/arvind-kumar.webp" alt="Arvind Kumar" class="img-fluid rounded mb-3" onclick="imgOpen(this)" />
+<img data-src="img/arvind-kumar.webp" alt="Arvind Kumar" class="lazyload img-fluid rounded mb-3" onclick="imgOpen(this)" />
 </div>
 <div class="col-sm-8">
 <h2>About Developer</h2>
 <p>Hi, I am Arvind Kumar, front-end web developer. I create websites for business owners like you, so you can focus on getting your clients happier and satisfied. When I build your website, I use the perfect combination of my skills and experience as a developer and designer.</p>
 
 <div class="row g-2">
-<img src="img/rexarvind-web-services-rwd.webp" alt="Responsive Web Design Certificate" class="col-3" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-fel.webp" alt="Front End Libraries Certificate" class="col-3" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-jads.webp" alt="JavaScript Algorithms and Data Structures Certificate" class="col-3" onclick="imgOpen(this)" />
-<img src="img/rexarvind-web-services-dv.webp" alt="Data Visualisation Certificate" class="col-3" onclick="imgOpen(this)" />
+<img data-src="img/rexarvind-web-services-rwd.webp" alt="Responsive Web Design Certificate" class="lazyload col-3" onclick="imgOpen(this)" />
+<img data-src="img/rexarvind-web-services-fel.webp" alt="Front End Libraries Certificate" class="lazyload col-3" onclick="imgOpen(this)" />
+<img data-src="img/rexarvind-web-services-jads.webp" alt="JavaScript Algorithms and Data Structures Certificate" class="lazyload col-3" onclick="imgOpen(this)" />
+<img data-src="img/rexarvind-web-services-dv.webp" alt="Data Visualisation Certificate" class="lazyload col-3" onclick="imgOpen(this)" />
 </div>
 
 </div>
@@ -362,7 +362,7 @@
 <h5 class="modal-title">RexArvind<span class="text-muted">.me</span></h5>
 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
 </div>
-<img src="img/hd720.png" id="imgModalSrc" class="img-fluid" alt="...">
+<img data-src="" id="imgModalSrc" class="lazyload img-fluid" alt="...">
 <p id="imgModalAlt" class="text-center p-2 mb-0"></p>
 </div>
 
@@ -398,5 +398,6 @@
 </footer>
 <!-- footer end -->
 
+<script src="lib/lazysizes.min.js"></script>
 <script src="lib/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script></body></html>

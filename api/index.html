@@ -1,1 +1,191 @@
-jj
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AppSnapper by RexArvind</title>
+
+<link rel="canonical" href="https://rexarvindwebservices.netlify.app/2/">
+<link rel="preconnect" href="https://rexarvindwebservices.netlify.app/2/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin
+<link rel="preconnect" href="https://api.countapi.xyz/" crossorigin>
+
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"></noscript>
+
+<meta name="theme-color" content="#212121">
+
+<style>body{font-family:'Rubik',sans-serif}</style>
+</head><body class="d-flex flex-column h-100 bg-light">
+<!-- header start -->
+<header>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-1 border-bottom border-secondary">
+<div class="container-lg">
+
+<a class="navbar-brand font-weight-bold mx-auto" href="index.html">JavaScript API Playground</a>
+
+
+
+</div>
+</nav>
+</header>
+<!-- header end -->
+
+<main class="flex-shrink-0 pt-5">
+
+<!-- hero area start -->
+<div class="container-lg pt-4">
+
+<div class="row gy-4">
+<div class="col-sm-6">
+<h1>AppSnapper Landing Page Design</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<a href="#!" data-toggle="modal" data-target="#appModal" class="btn btn-dark">Download AppSnapper &nbsp; <i class="fa fa-download"></i></a>
+</div>
+<div class="col-sm-6">
+
+</div>
+
+</div>
+
+<hr class="mt-4 mb-0 invisible"></div>
+<!-- hero area end -->
+
+
+<!-- what area end -->
+<div class="container-lg pt-4">
+
+<div class="row gx-3 gy-5">
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2 class="text-truncate">Password Generator</h2>
+<input type="text" id="pwdInput" readonly="" value="..." class="form-control text-center shadow-none border-secondary mt-3"><div class="text-center"><button id="pwdCopyBtn" onclick="copyPwd()" class="btn btn-secondary btn-sm shadow-none mt-2">Click to copy password</button></div></div>
+<div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getPwd()">Get Another Password</button></div></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2>Color Generator</h2>
+<div id="colorBox" class="p-5 mt-3 rounded"></div>
+<div class="input-group input-group-sm mt-2">
+<input type="text" id="colorCode" value="#cc0000" readonly="" class="form-control border-secondary shadow-none">
+<button id="copyColorBtn" onclick="copyColor()" class="btn btn-secondary shadow-none" type="button" id="button-addon2">Copy color code</button>
+</div>
+</div>
+<div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getColor()">Get Another Color</button></div></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Quote</h2>
+<p id="quoteBox">...</p></div>
+<div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getQuote()">Get Another Quote</button></div></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Joke</h2>
+<p id="jokeBox">...</p></div>
+<div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getJoke()">Get Another Joke</button></div></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Advice</h2>
+<p>
+<span id="adviceSlip">...</span><br />
+<small id="adviceId" class="text-muted"></small>
+</p></div>
+<div class="card-footer"><a href="#!" onclick="shareAdvice()" id="shareAdviceBtn" class="btn btn-dark btn-sm btn-block shadow-none">Share on WhatsApp</a></div></div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="card h-100 shadow border-dark"><div class="card-body"><h2 class="text-truncate">New Year Countdown</h2>
+<div class="text-center">
+<p class="font-weight-bold mt-3">
+<span id="nyDays" class="h3">...</span>
+<small class="text-muted font-weight-normal"> days</small><br />
+<span id="nyHours">...</span>
+<small class="text-muted font-weight-normal"> hours</small>
+<span id="nyMinutes">...</span>
+ <small class="text-muted font-weight-normal"> minutes</small>
+<span id="nySeconds">...</span>
+ <small class="text-muted font-weight-normal">seconds</small>
+</p>
+</div></div>
+<div class="card-footer"><button data-toggle="modal" data-target="#nyModal" class="btn btn-dark btn-sm btn-block shadow-none">Share New Year Resolution</button></div></div>
+</div>
+</div>
+
+<hr class="mt-4 mb-0 invisible"></div>
+<!-- what area end -->
+
+
+<!-- news area end -->
+<div class="container-lg pt-4">
+<div class="row g-3" id="newsBox">
+<div class="col-sm-4">
+<h2 class="mb-0">New York Times News API</h2>
+</div>
+<div class="col-sm-8">
+<p>This api is provided by the New York Times. For more information about this api <a href="https://developer.nytimes.com/" class="link-dark">click here to visit NY Times website</a>.</p>
+</div>
+</div>
+<hr class="mt-4 mb-0 invisible"></div>
+<!-- news area end -->
+
+
+
+
+
+
+
+<!-- modal of ny resolution start -->
+<div class="modal fade" id="nyModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">JS API Playground</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<p class="text-center p-2 mb-0">Form will be added soon.</p>
+</div>
+</div>
+</div>
+<!-- modal of ny resolution end -->
+
+
+
+
+
+
+
+<!-- modal of img lightbox start -->
+<div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">JS API Playground</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<img data-src="" id="imgModalSrc" class="lazyload img-fluid" alt="...">
+<p id="imgModalAlt" class="text-center p-2 mb-0"></p>
+</div>
+
+</div>
+</div>
+<!-- modal of img lightbox end -->
+
+</main>
+
+<!-- footer start -->
+<footer class="footer mt-auto pt-2 pb-5 bg-dark text-light">
+<div class="container-lg">
+
+<div class="row gx-2 align-items-center">
+<div class="col-sm-6">
+<span>Page Views: <span id="pageViews">...</span></span>
+</div>
+<div class="col-sm-6">
+<span>RexArvind Web Services &copy; <span id="copyYear">...</span></span>
+</div>
+</div>
+
+</div>
+</footer>
+<!-- footer end -->
+
+<script src="../lib/lazysizes.min.js"></script>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script></body></html>

@@ -3,6 +3,13 @@ const _=(id)=>document.getElementById(id)
 const numberWithCommas=(x)=>x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
+function countWords(s){
+s = s.replace(/(^\s*)|(\s*$)/gi,"");
+s = s.replace(/[ ]{2,}/gi," ");
+s = s.replace(/\n /,"\n");
+return s.split(' ').filter(str=>str!="").length}
+
+
 
 /* Password Generator and Copy Password */
 function getPwd(){
@@ -88,7 +95,8 @@ setInterval(()=>newYear(), 1000)
 
 
 const countChars=(el)=>{
-_("nyResChars").innerText=el.value.length}
+let words=countWords(el.value);
+_("nyResChars").innerText=el.value.length+", words: "+words}
 
 const nyShare=(el)=>{
 let url=_("nyShareMsg").value;
@@ -141,7 +149,7 @@ function getQuote(){
 _("quoteBox").innerHTML=`<div class="text-center my-4"><div class="spinner-border" role="status"> <span class="visually-hidden">Loading...</span> </div></div>`;
 fetch("https://favqs.com/api/qotd").then(res=>res.json())
 .then(res=>{
-_("quoteBox").innerHTML=`&quot;${res.quote.body}&quot;<br/><small class="text-muted">ID ${res.quote.id}, &nbsp; By ${res.quote.author}</small>`
+_("quoteBox").innerHTML=`${res.quote.body}<br/><small class="text-muted">ID ${res.quote.id}, &nbsp; By ${res.quote.author}</small>`
 })
 .catch(err=>{_("quoteBox").innerText=err})
 }

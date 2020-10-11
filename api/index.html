@@ -19,7 +19,7 @@
 </head><body class="d-flex flex-column h-100 bg-light">
 <!-- header start -->
 <header>
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-1 border-bottom border-secondary">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary">
 <div class="container-lg">
 
 <a class="navbar-brand font-weight-bold mx-auto" href="index.html">JavaScript API Playground</a>
@@ -55,13 +55,14 @@
 
 <!-- what area end -->
 <div class="container-lg pt-4">
+<div class="row gx-3 gy-4">
 
-<div class="row gx-3 gy-5">
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2 class="text-truncate">Password Generator</h2>
 <input type="text" id="pwdInput" readonly="" value="..." class="form-control text-center shadow-none border-secondary mt-3"><div class="text-center"><button id="pwdCopyBtn" onclick="copyPwd()" class="btn btn-secondary btn-sm shadow-none mt-2">Click to copy password</button></div></div>
 <div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getPwd()">Get Another Password</button></div></div>
 </div>
+
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2>Color Generator</h2>
 <div id="colorBox" class="p-5 mt-3 rounded"></div>
@@ -72,16 +73,19 @@
 </div>
 <div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getColor()">Get Another Color</button></div></div>
 </div>
+
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Quote</h2>
 <p id="quoteBox">...</p></div>
 <div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getQuote()">Get Another Quote</button></div></div>
 </div>
+
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Joke</h2>
 <p id="jokeBox">...</p></div>
 <div class="card-footer"><button class="btn btn-dark btn-sm btn-block shadow-none" onclick="getJoke()">Get Another Joke</button></div></div>
 </div>
+
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2>Random Advice</h2>
 <p>
@@ -90,6 +94,7 @@
 </p></div>
 <div class="card-footer"><a href="#!" onclick="shareAdvice()" id="shareAdviceBtn" class="btn btn-dark btn-sm btn-block shadow-none">Share on WhatsApp</a></div></div>
 </div>
+
 <div class="col-sm-6 col-md-4">
 <div class="card h-100 shadow border-dark"><div class="card-body"><h2 class="text-truncate">New Year Countdown</h2>
 <div class="text-center">
@@ -97,9 +102,9 @@
 <span id="nyDays" class="h3">...</span>
 <small class="text-muted font-weight-normal"> days</small><br />
 <span id="nyHours">...</span>
-<small class="text-muted font-weight-normal"> hours</small>
+<small class="text-muted font-weight-normal"> hours &nbsp;</small>
 <span id="nyMinutes">...</span>
- <small class="text-muted font-weight-normal"> minutes</small>
+ <small class="text-muted font-weight-normal"> minutes &nbsp;</small>
 <span id="nySeconds">...</span>
  <small class="text-muted font-weight-normal">seconds</small>
 </p>
@@ -131,6 +136,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <!-- modal of ny resolution start -->
 <div class="modal fade" id="nyModal" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
@@ -139,14 +153,20 @@
 <h5 class="modal-title">JS API Playground</h5>
 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
 </div>
-<p class="text-center p-2 mb-0">Form will be added soon.</p>
+<div class="modal-body">
+
+<textarea id="nyShareMsg" class="form-control p-2 border-dark shadow-none" rows="5" placeholder="What's your plan for next year.." onkeyup="countChars(this)" required>
+</textarea>
+<div class="form-text">Total characters: <span id="nyResChars">0</span></div>
+
+</div>
+<div class="modal-footer py-2">
+<a href="#!" onclick="nyShare(this)" class="btn btn-dark btn-block shadow-none">Share on WhatsApp</a>
+</div>
 </div>
 </div>
 </div>
 <!-- modal of ny resolution end -->
-
-
-
 
 
 
@@ -162,7 +182,6 @@
 <img data-src="" id="imgModalSrc" class="lazyload img-fluid" alt="...">
 <p id="imgModalAlt" class="text-center p-2 mb-0"></p>
 </div>
-
 </div>
 </div>
 <!-- modal of img lightbox end -->

@@ -1,14 +1,14 @@
-function _(id){
-return document.getElementById(id)}
+const _=(id)=>document.getElementById(id)
 
-function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-
+const numberWithCommas=(x)=>x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
+
+/* Password Generator and Copy Password */
 function getPwd(){
-var chars = "01234567890abcdefghijklmnopqrstuvwxyz@#_&*:;!?(){}[]ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var pwdLength=16;
-var pwd="";
+let chars= "01234567890abcdefghijklmnopqrstuvwxyz@#_&*:;!?(){}[]ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const pwdLength=16;
+let pwd="";
 for(let i=0; i<pwdLength; i++){
 var randomNumber=Math.floor(Math.random() * chars.length);
 pwd += chars.substring(randomNumber, randomNumber+1)
@@ -25,8 +25,7 @@ _("pwdCopyBtn").innerText = "Password Copied" }
 
 
 
-
-
+/* Color Generator and Copy Color */
 function getHexNumber(){
 return Math.floor(Math.random() * hex.length)}
 
@@ -53,8 +52,23 @@ _("copyColorBtn").innerText="Color Copied"}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* New Year Countdown */
+let date=new Date();
+let year=(date.getFullYear())+1;
+
 function newYear(){
-let countDate=new Date("Jan 1, 2021 00:00:00").getTime();
+let countDate=new Date("Jan 1, "+year+" 00:00:00").getTime();
 let now=new Date().getTime();
 gap=countDate - now;
 let second=1000;
@@ -70,7 +84,17 @@ _("nyHours").innerText=h;
 _("nyMinutes").innerText=m;
 _("nySeconds").innerText=s;
 }
-setInterval(()=>newYear(), 1000) 
+setInterval(()=>newYear(), 1000)
+
+
+const countChars=(el)=>{
+_("nyResChars").innerText=el.value.length}
+
+const nyShare=(el)=>{
+let url=_("nyShareMsg").value;
+url=encodeURIComponent(url);
+el.href="https://api.whatsapp.com/send?&text="+url;}
+
 
 
 
@@ -91,21 +115,22 @@ const showNews=(data)=>{
 let output="";
 data.forEach((data, index)=>{
 if(data.byline==""){data.byline="Not Available"}
-
 output+=`<div class="col-sm-6 col-md-4">
-<div class="card h-100 border-dark shadow-sm">
+<div class="card h-100 border-dark shadow-sm" onclick="openNews(this)">
 <img src="${data.multimedia[0].url}" class="card-img-top" alt="${data.title}" onclick="imgOpen(this)">
 <div class="card-body p-2">
-<a href="${data.url}" class="link-dark text-decoration-none">
-<h5 class="card-title">${data.title}&#8599;</h5>
-<p class="h6 font-weight-normal mb-0">${data.abstract}</p>
+<h5 class="card-title">${data.title}</h5>
+<a href="${data.url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-dark">
+<p class="h6 font-weight-normal mb-0">${data.abstract}..</p></a>
 </div>
-<p class="h6 font-weight-normal text-muted p-2 mb-0 border-top bg-light rounded-bottom">${data.byline}</p></a>
+<p class="h6 font-weight-normal text-muted p-2 mb-0 border-top bg-light rounded-bottom">${data.byline}</p>
 </div>
 </div>`
 })
 _("newsBox").innerHTML+=output;
 }
+
+
 
 
 

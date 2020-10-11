@@ -73,6 +73,7 @@ _("copyColorBtn").innerText="Color Copied"}
 /* New Year Countdown */
 let date=new Date();
 let year=(date.getFullYear())+1;
+_("copyYear").innerText=year-1;
 
 function newYear(){
 let countDate=new Date("Jan 1, "+year+" 00:00:00").getTime();
@@ -125,7 +126,7 @@ data.forEach((data, index)=>{
 if(data.byline==""){data.byline="Not Available"}
 output+=`<div class="col-sm-6 col-md-4">
 <div class="card h-100 border-dark shadow-sm" onclick="openNews(this)">
-<img src="${data.multimedia[0].url}" class="card-img-top" alt="${data.title}" onclick="imgOpen(this)">
+<img data-src="${data.multimedia[0].url}" class="lazyload card-img-top" alt="${data.title}" onclick="imgOpen(this)">
 <div class="card-body p-2">
 <h5 class="card-title">${data.title}</h5>
 <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-dark">

@@ -12,16 +12,12 @@ fetch("https://rexarvind.github.io/lib/projects.json").then(res=>res.json())
 _("rexModalBody").innerHTML="";
 res.forEach((data)=>{
 _("rexModalBody").innerHTML+=`
-
 <div class="card m-3 border-dark shadow">
 <img data-src="projects/${data.img}" class="lazyload card-img-top" alt="${data.text}">
 <div class="card-body p-2 position-relative">
 <a href="${data.link}" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
 <p class="card-text pt-2">${data.text}</p>
-</div></div>
-
-`
-})
+</div></div>`})
 })
 .catch(err=>{_("rexModalBody").innerHTML=`<p class="text-center my-4">${err}</p>`})
 }
@@ -29,9 +25,10 @@ _("rexModalBody").innerHTML+=`
 
 
 function imgOpen(el){
-let modal=new bootstrap.Modal(_("imgModal"));
-_("imgModalSrc").src=el.src;
-_("imgModalAlt").innerText=el.alt;
+let modal=new bootstrap.Modal(_("rexModal"));
+_("rexModalBody").innerHTML=`
+<img data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
+<p class="text-center p-2 mb-0">${el.alt}</p>`;
 modal.toggle()}
 
 function updateViews(){

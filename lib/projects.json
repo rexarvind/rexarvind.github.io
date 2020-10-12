@@ -1,19 +1,19 @@
 [
 
 {"text":"JavaScript API Playground",
-"img":"https://dummyimage.com/360",
+"img":"360.png",
 "link":"https://rexarvind.github.io/api/"},
 
 {"text":"Ranjan Commerce Tutorials",
-"img":"projects/ranjan-commerce-tutorials.webp",
+"img":"ranjan-commerce-tutorials.webp",
 "link":"https://ranjancommercetutorials.000webhostapp.com/"},
 
 {"text":"Darpan Agarbatti",
-"img":"projects/darpan-agarbatti.webp",
+"img":"darpan-agarbatti.webp",
 "link":"https://darpanagarbatti.netlify.app/"},
 
 {"text":"LCG Studio",
-"img":"projects/lucky-charm-girl.webp",
+"img":"lucky-charm-girl.webp",
 "link":"https://luckycharmgirl.github.io/"}
 
 ]

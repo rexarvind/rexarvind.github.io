@@ -1,7 +1,32 @@
-function _(id){
-return document.getElementById(id)}
+const _=(id)=>document.getElementById(id)
 
 function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+
+
+const openProjects=()=>{
+let modal=new bootstrap.Modal(_("rexModal"));
+_("rexModalBody").innerHTML=`<div class="text-center my-5"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>`;
+modal.toggle();
+fetch("https://rexarvind.github.io/lib/projects.json").then(res=>res.json())
+.then(res=>{
+_("rexModalBody").innerHTML="";
+res.forEach((data)=>{
+_("rexModalBody").innerHTML+=`
+
+<div class="card m-3 border-dark shadow">
+<img data-src="${data.img}" class="lazyload card-img-top" alt="${data.text}">
+<div class="card-body p-2 position-relative">
+<a href="${data.link}" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
+<p class="card-text pt-2">${data.text}</p>
+</div></div>
+
+`
+})
+})
+.catch(err=>{_("rexModalBody").innerHTML=`<p class="text-center my-4">${err}</p>`})
+}
+
+
 
 function imgOpen(el){
 let modal=new bootstrap.Modal(_("imgModal"));
@@ -16,8 +41,7 @@ fetch('https://api.countapi.xyz/update/rexarvind/home/?amount=1').then(res=>res.
 updateViews();
 
 const date=new Date();
-const year=date.getFullYear();
-_("copyYear").innerText=year;
+_("copyYear").innerText=date.getFullYear();
 
 if ('serviceWorker' in navigator){
   navigator.serviceWorker

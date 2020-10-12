@@ -126,7 +126,7 @@ data.forEach((data, index)=>{
 if(data.byline==""){data.byline="Not Available"}
 output+=`<div class="col-sm-6 col-md-4">
 <div class="card h-100 border-dark shadow-sm" onclick="openNews(this)">
-<img data-src="${data.multimedia[0].url}" class="lazyload card-img-top" alt="${data.title}" onclick="imgOpen(this)">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="${data.multimedia[0].url}" class="lazyload card-img-top" alt="${data.title}" onclick="imgOpen(this)">
 <div class="card-body p-2">
 <h5 class="card-title">${data.title}</h5>
 <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-dark">
@@ -185,11 +185,11 @@ getJoke();
 
 
 
-function imgOpen(el){
-let modal=new bootstrap.Modal(_("imgModal"));
-_("imgModalSrc").src=el.src;
-_("imgModalSrc").alt=el.alt;
-_("imgModalAlt").innerText=el.alt;
+const imgOpen=el=>{
+let modal=new bootstrap.Modal(_("rexModal"));
+_("rexModalBody").innerHTML=`
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
+<p class="text-center p-2 mb-0">${el.alt}</p>`;
 modal.toggle()}
 
 function updateViews(){

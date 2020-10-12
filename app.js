@@ -24,10 +24,10 @@ _("rexModalBody").innerHTML+=`
 
 
 
-function imgOpen(el){
+const imgOpen=el=>{
 let modal=new bootstrap.Modal(_("rexModal"));
 _("rexModalBody").innerHTML=`
-<img data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
 <p class="text-center p-2 mb-0">${el.alt}</p>`;
 modal.toggle()}
 

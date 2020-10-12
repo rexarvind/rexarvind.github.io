@@ -14,7 +14,7 @@ res.forEach((data)=>{
 _("rexModalBody").innerHTML+=`
 
 <div class="card m-3 border-dark shadow">
-<img data-src="${data.img}" class="lazyload card-img-top" alt="${data.text}">
+<img data-src="projects/${data.img}" class="lazyload card-img-top" alt="${data.text}">
 <div class="card-body p-2 position-relative">
 <a href="${data.link}" target="_blank" rel="noopener noreferer" class="btn btn-dark btn-sm position-absolute top-0 translate-middle border border-secondary" style="left:90%">Live</a>
 <p class="card-text pt-2">${data.text}</p>

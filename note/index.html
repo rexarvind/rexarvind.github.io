@@ -1,1 +1,210 @@
-j
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Note by RexArvind</title>
+
+<link rel="canonical" href="https://rexarvind.me/note/">
+<link rel="preconnect" href="https://rexarvind.me/note/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin
+<link rel="preconnect" href="https://api.countapi.xyz/" crossorigin>
+
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"></noscript>
+
+<meta name="theme-color" content="#212121">
+
+<style>body{font-family:'Rubik',sans-serif}</style>
+</head><body class="d-flex flex-column h-100 bg-light">
+<!-- header start -->
+<header>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
+<div class="container-lg">
+
+<a class="navbar-brand font-weight-bold mx-auto" href="index.html">RexArvind<span class="text-muted">.me/</span>Note</a>
+
+</div>
+</nav>
+</header>
+<!-- header end -->
+
+<main class="flex-shrink-0 pt-4">
+
+<!-- hero area start -->
+<div class="guest bg-dark text-light">
+<div class="container-lg pt-5">
+<div class="row gy-5">
+
+<div class="col-sm-6">
+<h1>Personal &amp; secure to-do list on the web</h1>
+<p>Save your daily tasks &amp; reminders online to have the bird eye view on work schedule. This will help to keep everything organised at one place. It&apos;s easy to use and lightweight.
+</p>
+</div>
+<div class="col-sm-6">
+<form id="loginForm">
+<label for="loginEmail" class="form-label">Email address</label>
+<input type="email" class="form-control mb-3" id="loginEmail">
+<label for="loginPassword" class="form-label">Password</label>
+<div class="input-group mb-3">
+<input type="password" class="form-control" id="loginPassword">
+<button class="btn btn-outline-light" type="button" id="loginPasswordToggle">View</button>
+</div>
+<button type="submit" class="btn btn-light btn-block">Login</button>
+</form>
+</div>
+
+</div>
+<hr class="mt-5 mb-0 invisible"></div>
+</div>
+<!-- hero area end -->
+
+
+<!-- hero2 area start -->
+<div class="guest container-lg pt-5">
+<div class="row gy-5">
+
+<div class="col-sm-6">
+<h2>New here, join us by creating an account</h2>
+<p>Save your daily tasks &amp; reminders online to have the bird eye view on work schedule. This will help to keep everything organised at one place. It&apos;s easy to use and lightweight.
+</p>
+</div>
+<div class="col-sm-6">
+<h2>Create Account</h2>
+<form id="signupForm">
+<label for="signupEmail" class="form-label">Email address</label>
+<input type="email" class="form-control" id="signupEmail" required>
+<div class="form-text mb-3">Verification link will be sent on this email.</div>
+<label for="signupPwd" class="form-label">Password</label>
+<div class="input-group mb-3">
+<input type="password" class="form-control" id="signupPwd" required>
+<button class="btn btn-outline-secondary" type="button" id="signupPwdToggle">View</button>
+</div>
+<div class="mb-3 form-check">
+<input type="checkbox" class="form-check-input" id="signupConsent" required>
+<label class="form-check-label" for="signupConsent">I agree with storage and maintenance of my data on this website.</label>
+</div>
+<button type="submit" class="btn btn-dark btn-block">Create Account</button>
+</form>
+</div>
+
+</div>
+<hr class="mt-5 mb-0 invisible"></div>
+<!-- hero2 area end -->
+
+<!-- notes area start -->
+<div class="user d-none bg-dark text-light">
+<div class="container-lg pt-5">
+<div class="row gy-5">
+
+<div class="col-sm-6">
+<h1>Welcome Back</h1>
+<p>Just some text for you.</p>
+<div class="btn-group">
+<button class="btn btn-light shadow-none dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tools &nbsp; </button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" data-toggle="modal" data-target="#resetPwdModal" href="#!">Reset Password</a></li>
+<li><a class="dropdown-item" href="#!">Logout</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a href="#!" class="dropdown-item">Delete Account</a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-6">
+<form id="addNoteForm">
+
+<label for="addNoteTitle" class="form-label">Title of note</label>
+<input type="text" class="form-control" id="addNoteTitle" required>
+<div class="form-text mb-3">Total characters left: <span id="addNoteTitleChars"></span></div>
+
+<label for="addNoteContent" class="form-label">Title of note</label>
+<textarea id="addNoteContent" class="form-control p-2 border-dark shadow-none" rows="9" placeholder="What's your plan for next year.." required>
+</textarea>
+
+<button type="submit" class="btn btn-dark btn-block">Add Note</button>
+
+</form>
+</div>
+
+</div>
+<hr class="mt-4 mb-0 invisible"></div>
+</div>
+<!-- notes area end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- resetPwdModal start -->
+<div class="modal fade" id="resetPwdModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Note</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<form id="resetPwdForm" class="m-3">
+<label for="resetPwdEmail" class="form-label">Email address</label>
+<input type="email" class="form-control mb-3" id="resetPwdEmail">
+<button type="submit" class="btn btn-dark btn-block">Send Password Reset Email</button>
+</form>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark btn-sm w-50">Close</button>
+</div>
+</div></div></div>
+<!-- resetPwdModal end -->
+
+
+
+
+
+
+<!-- multipurpose rexModal start -->
+<div class="modal fade" id="rexModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Note</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div id="rexModalBody"></div>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark btn-sm w-50">Close</button>
+</div>
+</div></div></div>
+<!-- multipurpose rexModal end -->
+
+</main>
+
+<!-- footer start -->
+<footer class="footer mt-auto pt-2 pb-5 bg-dark text-light">
+<div class="container-lg">
+
+<div class="row gx-2 align-items-center">
+<div class="col-sm-6">
+<span>Page Views: <span id="pageViews">...</span></span>
+</div>
+<div class="col-sm-6">
+<span>RexArvind Web Services &copy; <span id="copyYear">...</span></span>
+</div>
+</div>
+
+</div>
+</footer>
+<!-- footer end -->
+
+<script src="../lib/lazysizes.min.js"></script>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="app.js"></script></body></html>

@@ -1,6 +1,6 @@
-["status": true,
-"message": "Successful request.",
-"data":[
+["status" : true,
+"message" : "Successful request.",
+"data" : [
   {
     "ques": "Which is the most popular server side language?",
     "ans1": "Python",

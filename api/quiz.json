@@ -1,26 +1,85 @@
-[
+["status": true,
+"message": "Successful request.",
+"data":[
   {
-    "question": "Inside which HTML element do we put the JavaScript??",
-    "choice1": "<script>",
-    "choice2": "<javascript>",
-    "choice3": "<js>",
-    "choice4": "<scripting>",
-    "answer": 1
+    "ques": "Which is the most popular server side language?",
+    "ans1": "Python",
+    "ans2": "Node",
+    "ans3": "Deno",
+    "ans4": "PHP",
+    "correct": 4
   },
   {
-    "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    "choice1": "<script href='xxx.js'>",
-    "choice2": "<script name='xxx.js'>",
-    "choice3": "<script src='xxx.js'>",
-    "choice4": "<script file='xxx.js'>",
-    "answer": 3
+    "ques": "Web browsers can not process ....... language.",
+    "ans1": "JavaScript",
+    "ans2": "PHP",
+    "ans3": "CSS",
+    "ans4": "HTML",
+    "correct": 2
   },
   {
-    "question": " How do you write 'Hello World' in an alert box?",
-    "choice1": "msgBox('Hello World');",
-    "choice2": "alertBox('Hello World');",
-    "choice3": "msg('Hello World');",
-    "choice4": "alert('Hello World');",
-    "answer": 4
+    "ques": "MySql is which type of database?",
+    "ans1": "Relational Database",
+    "ans2": "Non Relational Databases",
+    "ans3": "Key Value Pairs",
+    "ans4": "Flat File Database",
+    "correct": 1
+  },
+ {
+    "ques": "Free sub-domain provided by Firebase hosting is ......?",
+    "ans1": ".firebase.web",
+    "ans2": ".firebaseapp.web",
+    "ans3": ".firebaseapp.com",
+    "ans4": ".firebase.io",
+    "correct": 3
+  },
+ {
+    "ques": "Github pages use ...... for website name.",
+    "ans1": "pull request name",
+    "ans2": "repository name",
+    "ans3": "username",
+    "ans4": "cloned repository name",
+    "correct": 3
+  },
+ {
+    "ques": "Netlify allows upto how many free websites?",
+    "ans1": "1",
+    "ans2": "50",
+    "ans3": "100",
+    "ans4": "500",
+    "correct": 4
+  },
+ {
+    "ques": "Firebase does not provide ......?",
+    "ans1": "Authentication service",
+    "ans2": "Cloud functions",
+    "ans3": "Real-time database",
+    "ans4": "Relational database",
+    "correct": 4
+  },
+ {
+    "ques": "Which is the fastest framework to build native apps with material design guidelines?",
+    "ans1": "Vue Native",
+    "ans2": "React Native",
+    "ans3": "Flutter",
+    "ans4": "Swift",
+    "correct": 3
+  },
+ {
+    "ques": "Most number of libraries or frameworks are build with ......?",
+    "ans1": "Deno",
+    "ans2": "PHP",
+    "ans3": "JavaScript",
+    "ans4": "CSS",
+    "correct": 3
+  },
+ {
+    "ques": "Most popular CSS library is .....?",
+    "ans1": "Materialize",
+    "ans2": "Bootstrap",
+    "ans3": "Tailwind",
+    "ans4": "Foundation",
+    "correct": 2
   }
+]
 ]

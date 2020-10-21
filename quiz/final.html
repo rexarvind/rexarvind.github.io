@@ -19,33 +19,32 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-5">
+
 <div class="card my-5 mx-auto">
 <span class="card-header h5 text-center">Annual Developer Quiz</span>
-<div class="card-body">
-<p>A little paragraph describing what it is.</p>
-<ul>
-<li>You will have 30 seconds to answer the question.</li>
-<li>You need to login to start the quiz, so that we can give you Certificate on successful completion.</li>
-</ul>
+<div class="card-body text-center">
+<p>Congratulations. you have completed the quiz.</p>
+
+<p class="font-weight-bold">Total Score: <span id="totalScore">...</span>
+<br>Total Percentage: <span id="totalPercentage">...</span></p>
+
+<form id="certificateForm" action="https://rex-arvind.000webhostapp.com/api/quiz/certificate.php" method="POST" target="_blank" class="d-none">
+<p>Enter your full name below. This will be shown on certificate, please take a second to make sure there are not any spelling mistakes.</p>
+<input type="hidden" id="quizKey" name="key" value="">
+<input type="text" id="certificateName" name="name" placeholder="" class="form-control text-center border-dark" required>
+<div class="form-text mb-3">Remaining characters: <span id="nameCounter"></span></div>
+<button id="certificateBtn" class="btn btn-dark btn-block font-weight-bold">Request Certificate</button>
+</form>
+
 </div>
 <div class="card-footer">
-<button id="playBtn" class="btn btn-dark btn-block font-weight-bold">Loading...</button>
+<a href="https://api.whatsapp.com/send?&text=Hey%20checkout%20this%20awesome%20quiz%20and%20get%20a%20free%20certificate.%0A%0Ahttps%3A%2F%2Fccvhpgc.github.io%2Fquiz%2F" class="btn btn-dark btn-block font-weight-bold">Share on Whatsapp</a>
 </div>
 </div> <!-- card -->
+
 </div> <!-- col -->
 </div> <!-- row -->
 </div> <!-- container -->
-
-
-<div class="container">
-<ul class="pagination flex-wrap justify-content-center" id="paginationBtns">
-</ul>
-</div>
-
-<div class="container-lg mb-5">
-<div class="row" id="results_box"></div>
-</div>
-
 
 <!-- custom alert modal start -->
 <div class="modal fade" id="alertBSModal" tabindex="-1" aria-hidden="true">
@@ -72,25 +71,16 @@
 <a href="https://rexarvind.github.io/" target="_blank" rel="noopener noreferrer" class="link-secondary text-decoration-none">RexArvind Web Services &copy; <span id="copyYear">...</span></a>
 </div>
 </footer>
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
 <script src="../lib/bootstrap.bundle.min.js"></script>
 <script>
-var firebaseConfig={
-apiKey:"AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU",
-authDomain:"rexarvind.firebaseapp.com",
-databaseURL:"https://rexarvind.firebaseio.com",
-projectId:"rexarvind",
-storageBucket:"rexarvind.appspot.com",
-messagingSenderId:"685927662051",
-appId:"1:685927662051:web:252add00d42a851bc320d6",
-measurementId:"G-CCNCD2RK1F"}
-firebase.initializeApp(firebaseConfig)
-const auth=firebase.auth()
+/* maximum characters of name on certificate and passing percentage for certificate.
+MAKE SURE TO UPDATE THESE ON SERVER ALSO */
+const MAX_NAME=25
+const PASS_SCORE=50
+
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const ADD_USER=ROOT_URL+"/api/quiz/add-user"
-const COUNT_HIGH_SCORE=ROOT_URL+"/api/quiz/count-high-score"
-const LIMIT_HIGH_SCORE=ROOT_URL+"/api/quiz/limit-high-score.php"
+const GET_SCORE=ROOT_URL+"/api/quiz/get-score/"
 </script>
-<script src="index.js"></script>
+<script src="final.js"></script>
 </body></html>

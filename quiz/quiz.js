@@ -12,6 +12,7 @@ const scoreText=_("scoreText")
 const nextQuesBtn=_("nextQuesBtn")
 const question=_("question")
 const answers=qsa(".answer")
+const description=_("description")
 
 /* define variables */
 let score=quesCounter=0;
@@ -31,8 +32,12 @@ const alertBS=text=>{
 
 
 /* get user id for getting questions */
-userID=sessionStorage.getItem("key")
+userID=
+"wjisdrvFDCPiLX6JdnGGZgtpomE2"
+
+/* sessionStorage.getItem("key")
 sessionStorage.clear()
+*/
 
 
 /* fetch questions fron database with user id */
@@ -95,6 +100,9 @@ const submitQuizData=score=>{
 const startQuiz=data=>{
   score=quesCounter=0;
   availableQues=[...data];
+  if(availableQues.length < MAX_QUES){
+    MAX_QUES = availableQues.length
+  }
   getNewQues();
 }
 
@@ -146,6 +154,10 @@ const showAns=()=>{
       answer.classList.add("bg-success","text-white")
     }
   })
+  /* show answer description */
+  description.classList.remove("d-none")
+  description.innerHTML=currentQues.desc
+
   /* enable button to get new question */
   nextQuesBtn.disabled=""
 }
@@ -161,6 +173,9 @@ const getNewQues=()=>{
     submitQuizData(score)
     return
   }
+
+  /* hide old answer description */
+  description.classList.add("d-none")
 
   /* update question counter */
   quesCounter++;
@@ -230,6 +245,11 @@ answers.forEach((answer)=>{
     /* show right answer */
     showAns()
   }
+
+  /* show answer description */
+  description.classList.remove("d-none")
+  description.innerHTML=currentQues.desc
+
   /* stop timer as answer is displayed */
   clearInterval(timer)
   /* enable button to get new question */

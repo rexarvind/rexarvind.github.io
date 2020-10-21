@@ -2,14 +2,14 @@
 <head><meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nowledge November Quiz</title>
+<title>Annual Developer Quiz</title>
 <link rel="stylesheet" href="../lib/bootstrap.min.css">
 <link rel="stylesheet" href="main.css">
 </head><body class="d-flex flex-column h-100 bg-dark">
 <header>
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
 <div class="container-lg">
-<a class="navbar-brand font-weight-bold mx-auto py-1" href="index.html">COMMERCE COUNCIL</a>
+<a class="navbar-brand font-weight-bold mx-auto py-1" href="index.html">RexArvind<span class="text-muted">.me/</span>Quiz</a>
 </div>
 </nav>
 </header>
@@ -20,7 +20,7 @@
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-5">
 
-<div id="quesCard" class="card mt-5 d-none mx-auto">
+<div id="quesCard" class="card mt-5 mb-2 d-none mx-auto">
 <span class="card-header d-flex justify-content-between align-items-center h5">
 <span>Time: <span id="remainingTime"></span></span>
 <span id="remainingQues"></span>
@@ -41,6 +41,9 @@
 <button id="nextQuesBtn" class="btn btn-dark font-weight-bold" disabled>Next Question</button>
 </div>
 </div> <!-- card -->
+
+<div id="description" class="card mb-5 p-3 d-none">
+</div>
 
 </div> <!-- col -->
 </div> <!-- row -->
@@ -74,11 +77,14 @@
 <script src="../lib/bootstrap.bundle.min.js"></script>
 <script>
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const QUIZAPI=ROOT_URL+"/api/nn-quiz/get-ques/"
-const ADD_SCORE=ROOT_URL+"/api/nn-quiz/add-score"
-const CORRECT_BONUS=2
-const MAX_QUES=7
+const QUIZAPI=ROOT_URL+"/api/quiz/get-ques/"
+const ADD_SCORE=ROOT_URL+"/api/quiz/add-score"
+const CORRECT_BONUS=4
 const MAX_TIME=5
+
+/* do not make this variable constant */
+var MAX_QUES=25
+
 </script>
 <script src="quiz.js"></script>
 </body></html>

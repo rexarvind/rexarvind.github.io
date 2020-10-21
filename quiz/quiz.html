@@ -1,0 +1,84 @@
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nowledge November Quiz</title>
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+</head><body class="d-flex flex-column h-100 bg-dark">
+<header>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
+<div class="container-lg">
+<a class="navbar-brand font-weight-bold mx-auto py-1" href="index.html">COMMERCE COUNCIL</a>
+</div>
+</nav>
+</header>
+
+<main class="flex-shrink-0 pt-2">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-8 col-lg-5">
+
+<div id="quesCard" class="card mt-5 d-none mx-auto">
+<span class="card-header d-flex justify-content-between align-items-center h5">
+<span>Time: <span id="remainingTime"></span></span>
+<span id="remainingQues"></span>
+</span>
+
+<div class="card-body text-center">
+<p id="question" class="h5 mb-4"></p>
+
+<div class="answer p-2 rounded shadow-sm border mb-2"></div>
+<div class="answer p-2 rounded shadow-sm border mb-2"></div>
+<div class="answer p-2 rounded shadow-sm border mb-2"></div>
+<div class="answer p-2 rounded shadow-sm border mb-2"></div>
+
+</div>
+<div class="card-footer d-flex justify-content-between align-items-center">
+<button class="btn btn-light border shadow-none font-weight-bold">Score: 
+<span id="scoreText">0</span></button>
+<button id="nextQuesBtn" class="btn btn-dark font-weight-bold" disabled>Next Question</button>
+</div>
+</div> <!-- card -->
+
+</div> <!-- col -->
+</div> <!-- row -->
+</div> <!-- container -->
+
+<!-- custom alert modal start -->
+<div class="modal fade" id="alertBSModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Information &#33;</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div id="alertBSBody" class="modal-body">
+</div>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark w-50">Close</button>
+</div>
+</div> <!-- modal-content -->
+</div> <!-- modal-dialog --> 
+</div> <!-- modal -->
+<!-- custom alert modal end -->
+
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark text-muted text-center border-top border-secondary">
+<div class="container">
+<a href="https://rexarvind.github.io/" target="_blank" rel="noopener noreferrer" class="link-secondary text-decoration-none">RexArvind Web Services &copy; <span id="copyYear">...</span></a>
+</div>
+</footer>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script>
+const ROOT_URL="https://rex-arvind.000webhostapp.com"
+const QUIZAPI=ROOT_URL+"/api/nn-quiz/get-ques/"
+const ADD_SCORE=ROOT_URL+"/api/nn-quiz/add-score"
+const CORRECT_BONUS=2
+const MAX_QUES=7
+const MAX_TIME=5
+</script>
+<script src="quiz.js"></script>
+</body></html>

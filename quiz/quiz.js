@@ -32,12 +32,8 @@ const alertBS=text=>{
 
 
 /* get user id for getting questions */
-userID=
-"wjisdrvFDCPiLX6JdnGGZgtpomE2"
-
-/* sessionStorage.getItem("key")
+userID=sessionStorage.getItem("key")
 sessionStorage.clear()
-*/
 
 
 /* fetch questions fron database with user id */

@@ -1,1 +1,96 @@
-div
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nowledge November Quiz</title>
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+</head><body class="d-flex flex-column h-100 bg-dark">
+<header>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
+<div class="container-lg">
+<a class="navbar-brand font-weight-bold mx-auto py-1" href="index.html">COMMERCE COUNCIL</a>
+</div>
+</nav>
+</header>
+
+<main class="flex-shrink-0 pt-2">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-8 col-lg-5">
+<div class="card my-5 mx-auto">
+<span class="card-header h5 text-center">Nowledge November Quiz</span>
+<div class="card-body">
+<p>A little paragraph describing what it is.</p>
+<ul>
+<li>You will have 30 seconds to answer the question.</li>
+<li>You need to login to start the quiz, so that we can give you Certificate on successful completion.</li>
+</ul>
+</div>
+<div class="card-footer">
+<button id="playBtn" class="btn btn-dark btn-block font-weight-bold">Loading...</button>
+</div>
+</div> <!-- card -->
+</div> <!-- col -->
+</div> <!-- row -->
+</div> <!-- container -->
+
+
+<div class="container">
+<ul class="pagination flex-wrap justify-content-center" id="paginationBtns">
+</ul>
+</div>
+
+<div class="container-lg mb-5">
+<div class="row" id="results_box"></div>
+</div>
+
+
+<!-- custom alert modal start -->
+<div class="modal fade" id="alertBSModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Information &#33;</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div id="alertBSBody" class="modal-body">
+</div>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark w-50">Close</button>
+</div>
+</div> <!-- modal-content -->
+</div> <!-- modal-dialog --> 
+</div> <!-- modal -->
+<!-- custom alert modal end -->
+
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark text-muted text-center border-top border-secondary">
+<div class="container">
+<a href="https://rexarvind.github.io/" target="_blank" rel="noopener noreferrer" class="link-secondary text-decoration-none">RexArvind Web Services &copy; <span id="copyYear">...</span></a>
+</div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script>
+var firebaseConfig={
+apiKey:"AIzaSyBN-tGMjWsrJylOpVTLnyrXAfYvrx9gCEU",
+authDomain:"ccvhpgc.firebaseapp.com",
+databaseURL:"https://ccvhpgc.firebaseio.com",
+projectId:"ccvhpgc",
+storageBucket:"ccvhpgc.appspot.com",
+messagingSenderId:"396547340937",
+appId:"1:396547340937:web:fc1280a69df6f029c4e458",
+measurementId:"G-T37JYYJ6NE"}
+firebase.initializeApp(firebaseConfig)
+const auth=firebase.auth()
+const ROOT_URL="https://ccvhpgc.000webhostapp.com"
+const ADD_USER=ROOT_URL+"/api/quiz/addUser"
+const COUNT_HIGH_SCORE=ROOT_URL+"/api/nn-quiz/count-high-score.php"
+const LIMIT_HIGH_SCORE=ROOT_URL+"/api/nn-quiz/limit-high-score.php"
+</script>
+<script src="index.js"></script>
+</body></html>

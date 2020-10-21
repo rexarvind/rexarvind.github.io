@@ -22,7 +22,7 @@
 
 <div id="quesCard" class="card mt-5 mb-2 d-none mx-auto">
 <span class="card-header d-flex justify-content-between align-items-center h5">
-<span>Time: <span id="remainingTime"></span></span>
+<span>Time Left: <span id="remainingTime"></span></span>
 <span id="remainingQues"></span>
 </span>
 
@@ -80,7 +80,7 @@ const ROOT_URL="https://rex-arvind.000webhostapp.com"
 const QUIZAPI=ROOT_URL+"/api/quiz/get-ques/"
 const ADD_SCORE=ROOT_URL+"/api/quiz/add-score"
 const CORRECT_BONUS=4
-const MAX_TIME=5
+const MAX_TIME=30
 
 /* do not make this variable constant */
 var MAX_QUES=25

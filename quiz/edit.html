@@ -1,0 +1,150 @@
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Annual Developer Quiz</title>
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+</head><body class="d-flex flex-column h-100 bg-dark">
+<header>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
+<div class="container-lg">
+<a class="navbar-brand font-weight-bold mx-auto py-1" href="index.html">RexArvind<span class="text-muted">.me/</span>Quiz</a>
+</div>
+</nav>
+</header>
+
+<main class="flex-shrink-0 pt-2">
+
+<div id="guestCard">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-8 col-lg-5">
+
+<div class="card mt-5 mb-2 mx-auto">
+<span class="card-header h5 text-center">Add &amp; Update Questions</span>
+<div class="card-body">
+<p>Just describe anything.</p>
+</div>
+<div class="card-footer">
+<button id="loginBtn" class="btn btn-dark btn-block">Login</button>
+</div>
+</div> <!-- card -->
+
+</div> <!-- col -->
+</div> <!-- row -->
+</div> <!-- container -->
+
+</div> <!-- guestCard -->
+
+
+
+
+
+
+<div id="userCard" class="d-none">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-8 col-lg-5">
+
+<div class="card mt-5 mb-2 mx-auto">
+<span class="card-header h5">Submit Question</span>
+
+<div class="card-body">
+<label for="ques" class="form-label mb-0">Enter Question</label>
+<textarea id="ques" class="form-control p-2" row="3" placeholder="Enter your question here..."></textarea>
+<div class="form-text mb-3">Remaining Characters: <span id="quesCounter">0</span></div>
+
+<label for="ans1" class="form-label mb-0">Choice 1.</label>
+<input type="text" id="ans1" class="form-control p-2 mb-3" placeholder="Blue" />
+
+<label for="ans2" class="form-label mb-0">Choice 2.</label>
+<input type="text" id="ans2" class="form-control p-2 mb-3" placeholder="Blue" />
+
+<label for="ans3" class="form-label mb-0">Choice 3.</label>
+<input type="text" id="ans3" class="form-control p-2 mb-3" placeholder="Blue" />
+
+<label for="ans4" class="form-label mb-0">Choice 4.</label>
+<input type="text" id="ans4" class="form-control p-2 mb-3" placeholder="Blue" />
+
+<label for="correct" class="form-label mb-0">Enter correct choice number</label>
+<div class="input-group mb-3">
+<span class="input-group-text">Correct Choice No.</span>
+<input type="text" class="form-control" id="correct" placeholder="2">
+</div>
+
+<label for="desc" class="form-label mb-0">Answer Description</label>
+<textarea id="desc" class="form-control p-2" row="3" placeholder="Describe answer..."></textarea>
+<div class="form-text">Remaining Characters: <span id="descCounter">0</span></div>
+
+</div>
+<div class="card-footer">
+<button id="submitBtn" class="btn btn-dark btn-block">Submit Question</button>
+</div>
+</div> <!-- card -->
+
+</div> <!-- col -->
+</div> <!-- row -->
+</div> <!-- container -->
+
+<div class="container mt-4">
+<ul class="pagination flex-wrap justify-content-center" id="paginationBtns">
+</ul>
+</div>
+
+<div class="container-lg">
+<div class="row" id="results_box"></div>
+</div>
+
+</div> <!-- userCard -->
+
+
+<!-- custom alert modal start -->
+<div class="modal fade" id="alertBSModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Information &#33;</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div id="alertBSBody" class="modal-body">
+</div>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark w-50">Close</button>
+</div>
+</div> <!-- modal-content -->
+</div> <!-- modal-dialog --> 
+</div> <!-- modal -->
+<!-- custom alert modal end -->
+
+
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark text-muted text-center border-top border-secondary">
+<div class="container">
+<a href="https://rexarvind.github.io/" target="_blank" rel="noopener noreferrer" class="link-secondary text-decoration-none">RexArvind Web Services &copy; <span id="copyYear">...</span></a>
+</div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script>
+var firebaseConfig={
+apiKey:"AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU",
+authDomain:"rexarvind.firebaseapp.com",
+databaseURL:"https://rexarvind.firebaseio.com",
+projectId:"rexarvind",
+storageBucket:"rexarvind.appspot.com",
+messagingSenderId:"685927662051",
+appId:"1:685927662051:web:252add00d42a851bc320d6",
+measurementId:"G-CCNCD2RK1F"}
+firebase.initializeApp(firebaseConfig)
+const auth=firebase.auth()
+const ROOT_URL="https://rex-arvind.000webhostapp.com"
+const ADD_URL=""
+const COUNT_URL=ROOT_URL+"/api/quiz/count"
+const LIMIT_URL=ROOT_URL+"/api/quiz/limit"
+</script>
+<script src="edit.js"></script>
+</body></html>

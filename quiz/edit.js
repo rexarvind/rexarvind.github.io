@@ -22,7 +22,7 @@ const results_box=_("results_box")
 
 /* define variables */
 let userID
-let resStatus, totalRows=1, pn
+let resStatus, totalRows, pn
 let availableQues=[]
 
 /* use custom alert by alertBS(x) */
@@ -207,7 +207,7 @@ const getAllQues=()=>{
 fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
-    totalRows=Number(res.data[0])
+    totalRows=res.data[0]
     alertBS(totalRows)
     request_page(1);
   } else {

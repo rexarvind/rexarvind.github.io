@@ -87,11 +87,11 @@ const editQues=id=>{
   availableQues.forEach(data=>{
     if(data.id == id){
       quesID.value=data.id
-      ques.value=data.ques
+      ques.innerHTML=data.ques
       ans1.innerHTML=data.ans1
       ans2.innerHTML=data.ans2
-      ans3.value=data.ans3
-      ans4.value=data.ans4
+      ans3.innerHTML=data.ans3
+      ans4.innerHTML=data.ans4
       correct.value=data.correct
       desc.innerHTML=data.desc
     }
@@ -209,8 +209,8 @@ submitBtn.addEventListener("click", ()=>{
   fd.append("id", quesID.value)
   fd.append("ques", ques.innerText)
   fd.append("ans1", ans1.innerText)
-  fd.append("ans2", ans2.value)
-  fd.append("ans3", ans3.value)
+  fd.append("ans2", ans2.innerText)
+  fd.append("ans3", ans3.innerText)
   fd.append("ans4", ans4.innerText)
   fd.append("correct", correct.value)
   fd.append("desc", desc.innerText)

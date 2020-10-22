@@ -149,7 +149,7 @@ const checkQuesRes=res=>{
     fetch(COUNT_QUES).then(res=>res.json())
     .then(res=>{
       if(res.status==true){
-        totalQuesAdded.innerHTML="Total Questions: "+res.data;
+        totalQuesAdded.innerHTML=res.data;
       }
     })
   } else {
@@ -213,7 +213,7 @@ fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
     totalRows=res.data
-    totalQuesAdded.innerHTML="Total Questions: "+totalRows;
+    totalQuesAdded.innerHTML=totalRows;
     request_page(1)
   } else {
     alertBS(res.message)

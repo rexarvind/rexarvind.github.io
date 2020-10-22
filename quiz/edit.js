@@ -206,6 +206,7 @@ fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
     totalRows=res.data[0]
+    alertBS(totalRows)
     request_page(1);
   } else {
     alertBS(res.message)

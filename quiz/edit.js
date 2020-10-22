@@ -21,6 +21,7 @@ const results_box=_("results_box")
 let userID
 let resStatus, totalRows, pn
 let rpp = 1;
+let availableQues=[];
 
 /* use custom alert by alertBS(x) */
 const alertBSModal=_("alertBSModal")
@@ -78,8 +79,14 @@ const editQues=(q,a1,a2,a3,a4,c,d)=>{
   desc.value=d
 }
 
+const showQuesDesc=id=>{
+alertBS(availableQues[id].desc)
+
+}
+
 
 const showQues=data=>{
+  availableQues=[...data]
   let output=""
   data.forEach((data)=>{
     output+=`<div class="col-sm-6 col-md-4">
@@ -88,7 +95,7 @@ const showQues=data=>{
     </div><div class="card-footer d-flex justify-content-between">
     <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
     <button onclick="editQues('${data.ques}','${data.ans1}','${data.ans2}','${data.ans3}','${data.ans4}','${data.correct}','${data.desc}')" class="btn btn-success btn-sm flex-fill">Edit</button>
-    <button onclick="alertBS('${data.desc}')" class="btn btn-dark btn-sm flex-fill ml-2">Description</button>
+    <button onclick="showQuesDesc('${data.id}')" class="btn btn-dark btn-sm flex-fill ml-2">Description</button>
     </div>
     </div>
     </div>`
@@ -119,7 +126,7 @@ function request_page(pn){
   fd.append("pn", pn)
 
   var xhr=new XMLHttpRequest()
-  xhr.open("POST", LIMIT_URL, true)
+  xhr.open("POST", LIMIT_QUES, true)
   xhr.onreadystatechange=()=>{
     if(xhr.readyState == 4 && xhr.status == 200){
         var xhrRes=JSON.parse(xhr.responseText)
@@ -157,7 +164,7 @@ function request_page(pn){
 }
 
 const getAllQues=()=>{
-fetch(COUNT_URL).then(res=>res.json())
+fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
     totalRows=res.data[0]
@@ -182,7 +189,7 @@ submitBtn.addEventListener("click", ()=>{
   fd.append("correct", shave(correct.value,1))
   fd.append("desc", shave(desc.value,250))
   var xhr=new XMLHttpRequest()
-  xhr.open("POST", ADD_URL, true)
+  xhr.open("POST", ADD_QUES, true)
   xhr.onreadystatechange = function(){
     if(xhr.readyState==4 && xhr.status==200){
       resStatus=xhr.responseText

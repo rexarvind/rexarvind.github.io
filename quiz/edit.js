@@ -8,7 +8,6 @@ const logoutBtn=_("logoutBtn")
 const userCard=_("userCard")
 const quesID=_("quesID")
 const ques=_("ques")
-const quesCounter=_("quesCounter")
 const ans1=_("ans1")
 const ans2=_("ans2")
 const ans3=_("ans3")
@@ -74,11 +73,6 @@ auth.signOut()
 .then(()=>alertBS("Logged out."))
 .catch(error=>alertBS(error))
 })
-
-
-/* trim extra letters */
-const shave=(str, n)=>
-(str.length>n) ? str.substr(0, n-2)+'..' : str;
 
 
 const deleteQues=id=>{
@@ -213,13 +207,13 @@ submitBtn.addEventListener("click", ()=>{
   let fd=new FormData()
   fd.append("uid", userID)
   fd.append("id", quesID.value)
-  fd.append("ques", shave(ques.value,250))
-  fd.append("ans1", shave(ans1.value,250))
-  fd.append("ans2", shave(ans2.value,250))
-  fd.append("ans3", shave(ans3.value,250))
-  fd.append("ans4", shave(ans4.value,250))
-  fd.append("correct", shave(correct.value,1))
-  fd.append("desc", shave(desc.value,250))
+  fd.append("ques", ques.value)
+  fd.append("ans1", ans1.value)
+  fd.append("ans2", ans2.value)
+  fd.append("ans3", ans3.value)
+  fd.append("ans4", ans4.value)
+  fd.append("correct", correct.value)
+  fd.append("desc", desc.value)
   var xhr=new XMLHttpRequest()
   xhr.open("POST", ADD_QUES, true)
   xhr.onreadystatechange = function(){

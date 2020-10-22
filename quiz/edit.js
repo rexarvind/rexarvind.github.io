@@ -70,7 +70,7 @@ function request_page(pn){
   results_box.innerHTML='<div class="text-center mb-5"><div class="spinner-border text-light my-5" role="status"></div></div>';
 
   let fd=new FormData()
-  fd.append("uid", uid)
+  fd.append("uid", userID)
   fd.append("rpp", rpp)
   fd.append("last", last)
   fd.append("pn", pn)

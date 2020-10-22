@@ -10,7 +10,6 @@ const results_box=_("results_box")
 /* define variables */
 let userID, userName, userEmail, userPhoto;
 let resStatus, totalRows, pn
-let rpp = 1;
 
 /* use custom alert by alertBS(x) */
 const alertBSModal=_("alertBSModal")

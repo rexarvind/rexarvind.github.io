@@ -53,12 +53,17 @@ auth.onAuthStateChanged(user=>{
 
 /* login with Google Firebase Auth */
 loginBtn.addEventListener("click", ()=>{
+  loginBtn.disabled="true"
   const googleProvider=new firebase.auth.GoogleAuthProvider()
   auth.signInWithRedirect(googleProvider)
   .then(()=>{
     guestCard.classList.add("d-none")
     userCard.classList.remove("d-none")
-  }).catch(error=>alertBS(error))
+    loginBtn.disabled=""
+  }).catch(error=>{
+    alertBS(error)
+    loginBtn.disabled=""
+  })
 })
 
 

@@ -70,7 +70,7 @@ const showQues=data=>{
     <div class="card">
     <span class="card-header h5">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer">
-    <button onclick="alertBS(${data.desc})" class="btn btn-dark btn-sm">Description</button>
+    <button onclick="alertBS('${data.desc}')" class="btn btn-dark btn-sm">Description</button>
     </div>
     </div>
     </div>`

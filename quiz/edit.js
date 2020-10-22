@@ -21,7 +21,7 @@ const results_box=_("results_box")
 
 /* define variables */
 let userID
-let resStatus, totalRows, pn
+let resStatus, totalRows=1, pn
 let availableQues=[]
 
 /* use custom alert by alertBS(x) */

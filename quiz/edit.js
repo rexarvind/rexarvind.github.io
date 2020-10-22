@@ -86,9 +86,9 @@ const showQues=data=>{
     <div class="card">
     <span class="card-header h6">${data.id}. ${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer d-flex justify-content-between">
-    <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-1">Delete</button>
-    <button onclick="editQues('${data.ques}','${data.ans1}','${data.ans2}','${data.ans3}','${data.ans4}','${data.correct}','${data.desc}')" class="btn btn-success btn-sm flex-fill mr-1">Edit</button>
-    <button onclick="alertBS('${data.desc}')" class="btn btn-dark btn-sm flex-fill">Description</button>
+    <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
+    <button onclick="editQues('${data.ques}','${data.ans1}','${data.ans2}','${data.ans3}','${data.ans4}','${data.correct}','${data.desc}')" class="btn btn-success btn-sm flex-fill">Edit</button>
+    <button onclick="alertBS('${data.desc}')" class="btn btn-dark btn-sm flex-fill ml-2">Description</button>
     </div>
     </div>
     </div>`

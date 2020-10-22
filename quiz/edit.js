@@ -22,8 +22,7 @@ const results_box=_("results_box")
 /* define variables */
 let userID
 let resStatus, totalRows, pn
-let rpp = 1;
-let availableQues=[];
+let availableQues=[]
 
 /* use custom alert by alertBS(x) */
 const alertBSModal=_("alertBSModal")
@@ -42,15 +41,12 @@ auth.onAuthStateChanged(user=>{
     userID=user.uid
     guestCard.classList.add("d-none")
     userCard.classList.remove("d-none")
+    logoutBtn.classList.remove("d-none")
     getAllQues()
   } else {
-/* delete later */
-userID="wjisdrvFDCPiLX6JdnGGZgtpomE2"
-
-    guestCard.classList.add("d-none")
-    userCard.classList.remove("d-none")
-getAllQues()
-
+    guestCard.classList.remove("d-none")
+    userCard.classList.add("d-none")
+    logoutBtn.classList.add("d-none")
   }
 })
 
@@ -81,7 +77,10 @@ const shave=(str, n)=>
 
 
 const deleteQues=id=>{
-  alertBS(id)
+delPath=DELETE_QUES+".php?uid="+userID+"&id="+id
+  fetch(delPath).then(res=>res.json())
+  .then(res=>alertBS(res.message))
+  .catch(err=>alertBS(err))
 }
 
 
@@ -117,7 +116,7 @@ const showQues=data=>{
   let output=""
   data.forEach((data)=>{
     output+=`<div class="col-sm-6 col-md-4">
-    <div class="card">
+    <div class="card h-100">
     <span class="card-header h6">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer d-flex justify-content-between">
     <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
@@ -220,8 +219,8 @@ submitBtn.addEventListener("click", ()=>{
   xhr.open("POST", ADD_QUES, true)
   xhr.onreadystatechange = function(){
     if(xhr.readyState==4 && xhr.status==200){
-      resStatus=xhr.responseText
-      alertBS(resStatus)
+      res=JSON.parse(xhr.responseText)
+      alertBS(res.message)
     }
   }
   xhr.onerror = function(){

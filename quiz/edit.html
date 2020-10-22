@@ -96,7 +96,7 @@
 </div>
 
 <div class="container-lg mb-5">
-<div class="row mb-5" id="results_box"></div>
+<div class="row g-2 mb-5" id="results_box"></div>
 </div>
 
 </div> <!-- userCard -->
@@ -104,7 +104,7 @@
 
 <!-- logout btn start -->
 <div class="position-fixed bottom-0 left-0 m-2">
-<button id="logoutBtn" class="btn btn-danger btn-sm border-secondary">Logout</button>
+<button id="logoutBtn" class="btn btn-danger btn-sm border-secondary d-none">Logout</button>
 </div>
 <!-- logout btn end -->
 
@@ -152,8 +152,10 @@ firebase.initializeApp(firebaseConfig)
 const auth=firebase.auth()
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
 const ADD_QUES=ROOT_URL+"/api/quiz/add-ques"
+const DELETE_QUES=ROOT_URL+"/api/quiz/delete-ques"
 const COUNT_QUES=ROOT_URL+"/api/quiz/count-all-ques"
 const LIMIT_QUES=ROOT_URL+"/api/quiz/limit-all-ques"
+let rpp = 6
 </script>
 <script src="edit.js"></script>
 </body></html>

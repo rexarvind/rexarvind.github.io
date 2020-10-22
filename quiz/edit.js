@@ -4,7 +4,9 @@ const _=id=>document.getElementById(id)
 /* get DOM elements */
 const guestCard=_("guestCard")
 const loginBtn=_("loginBtn")
+const logoutBtn=_("logoutBtn")
 const userCard=_("userCard")
+const quesID=_("quesID")
 const ques=_("ques")
 const quesCounter=_("quesCounter")
 const ans1=_("ans1")
@@ -42,6 +44,13 @@ auth.onAuthStateChanged(user=>{
     userCard.classList.remove("d-none")
     getAllQues()
   } else {
+/* delete later */
+userID="wjisdrvFDCPiLX6JdnGGZgtpomE2"
+
+    guestCard.classList.add("d-none")
+    userCard.classList.remove("d-none")
+getAllQues()
+
   }
 })
 
@@ -57,6 +66,13 @@ loginBtn.addEventListener("click", ()=>{
 })
 
 
+/* logout */
+logoutBtn.addEventListener("click", ()=>{
+let user=firebase.auth().currentUser
+auth.signOut()
+.then(()=>alertBS("Logged out."))
+.catch(error=>alertBS(error))
+})
 
 
 /* trim extra letters */
@@ -69,20 +85,31 @@ const deleteQues=id=>{
 }
 
 
-const editQues=(q,a1,a2,a3,a4,c,d)=>{
-  ques.value=q
-  ans1.value=a1
-  ans2.value=a2
-  ans3.value=a3
-  ans4.value=a4
-  correct.value=c
-  desc.value=d
+const editQues=id=>{
+  availableQues.forEach(data=>{
+    if(data.id == id){
+      quesID.value=data.id
+      ques.value=data.ques
+      ans1.value=data.ans1
+      ans2.value=data.ans2
+      ans3.value=data.ans3
+      ans4.value=data.ans4
+      correct.value=data.correct
+      desc.value=data.desc
+    }
+  })
 }
 
 const showQuesDesc=id=>{
-alertBS(availableQues[id].desc)
-
+  let tempDesc
+  availableQues.forEach(data=>{
+    if(data.id == id){
+      tempDesc=`<span style="white-space:pre-wrap">${data.desc}</span>`
+    }
+  })
+  alertBS(tempDesc)
 }
+
 
 
 const showQues=data=>{
@@ -91,10 +118,10 @@ const showQues=data=>{
   data.forEach((data)=>{
     output+=`<div class="col-sm-6 col-md-4">
     <div class="card">
-    <span class="card-header h6">${data.id}. ${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
+    <span class="card-header h6">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer d-flex justify-content-between">
     <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
-    <button onclick="editQues('${data.ques}','${data.ans1}','${data.ans2}','${data.ans3}','${data.ans4}','${data.correct}','${data.desc}')" class="btn btn-success btn-sm flex-fill">Edit</button>
+    <button onclick="editQues('${data.id}')" class="btn btn-success btn-sm flex-fill">Edit</button>
     <button onclick="showQuesDesc('${data.id}')" class="btn btn-dark btn-sm flex-fill ml-2">Description</button>
     </div>
     </div>
@@ -181,6 +208,7 @@ fetch(COUNT_QUES).then(res=>res.json())
 submitBtn.addEventListener("click", ()=>{
   let fd=new FormData()
   fd.append("uid", userID)
+  fd.append("id", quesID.value)
   fd.append("ques", shave(ques.value,250))
   fd.append("ans1", shave(ans1.value,250))
   fd.append("ans2", shave(ans2.value,250))

@@ -43,7 +43,7 @@
 
 
 
-<div id="userCard" class="d-none">
+<div id="userCard" class="d-none mb-5">
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-5">
@@ -52,8 +52,10 @@
 <span class="card-header h5">Submit Question</span>
 
 <div class="card-body">
+<input type="hidden" id="quesID" value="">
+
 <label for="ques" class="form-label mb-0">Enter Question</label>
-<textarea id="ques" class="form-control p-2" row="3" placeholder="Enter your question here..."></textarea>
+<textarea id="ques" class="form-control p-2" placeholder="Enter your question here..."></textarea>
 <div class="form-text mb-3">Remaining Characters: <span id="quesCounter">0</span></div>
 
 <label for="ans1" class="form-label mb-0">Choice 1.</label>
@@ -75,7 +77,7 @@
 </div>
 
 <label for="desc" class="form-label mb-0">Answer Description</label>
-<textarea id="desc" class="form-control p-2" row="3" placeholder="Describe answer..."></textarea>
+<textarea id="desc" class="form-control p-2" placeholder="Describe answer..."></textarea>
 <div class="form-text">Remaining Characters: <span id="descCounter">0</span></div>
 
 </div>
@@ -93,11 +95,18 @@
 </ul>
 </div>
 
-<div class="container-lg">
-<div class="row" id="results_box"></div>
+<div class="container-lg mb-5">
+<div class="row mb-5" id="results_box"></div>
 </div>
 
 </div> <!-- userCard -->
+
+
+<!-- logout btn start -->
+<div class="position-fixed bottom-0 left-0 m-2">
+<button id="logoutBtn" class="btn btn-danger btn-sm border-secondary">Logout</button>
+</div>
+<!-- logout btn end -->
 
 
 <!-- custom alert modal start -->
@@ -142,9 +151,9 @@ measurementId:"G-CCNCD2RK1F"}
 firebase.initializeApp(firebaseConfig)
 const auth=firebase.auth()
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const ADD_URL=""
-const COUNT_URL=ROOT_URL+"/api/quiz/count-all-ques"
-const LIMIT_URL=ROOT_URL+"/api/quiz/limit-all-ques"
+const ADD_QUES=ROOT_URL+"/api/quiz/add-ques"
+const COUNT_QUES=ROOT_URL+"/api/quiz/count-all-ques"
+const LIMIT_QUES=ROOT_URL+"/api/quiz/limit-all-ques"
 </script>
 <script src="edit.js"></script>
 </body></html>

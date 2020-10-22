@@ -63,6 +63,27 @@ const shave=(str, n)=>
 (str.length>n) ? str.substr(0, n-2)+'..' : str;
 
 
+const showQues=data=>{
+  let output=""
+  data.forEach((data, index)=>{
+    output+=`<div class="card">
+${index}<br>${data.ques}
+</div>
+  `
+  })
+  results_box.innerHTML=output
+}
+
+
+const checkQuesRes=res=>{
+  if(res.status==true){
+    showQues(res.data)
+  } else {
+    alertBS(res.message)
+  }
+}
+
+
 /* get questions and show pagination buttons */
 function request_page(pn){
   let last=Math.ceil(totalRows/rpp)
@@ -79,8 +100,8 @@ function request_page(pn){
   xhr.open("POST", LIMIT_URL, true)
   xhr.onreadystatechange=()=>{
     if(xhr.readyState == 4 && xhr.status == 200){
-        var xhrRes=xhr.responseText;
-        results_box.innerHTML=xhrRes
+        var xhrRes=JSON.parse(xhr.responseText)
+        checkQuesRes(xhrRes)
     }
   }
   xhr.onerror = function(){
@@ -112,10 +133,6 @@ function request_page(pn){
   }
   pagination_controls.innerHTML=paginationCtrls
 }
-
-
-
-
 
 const getAllQues=()=>{
 fetch(COUNT_URL).then(res=>res.json())

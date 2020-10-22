@@ -120,7 +120,7 @@ const checkScoreStatus=res=>{
     let output=""
     data=res.data
     data.forEach(data=>{
-    output=`<div class="col-sm-6 col-md-4">
+    output+=`<div class="col-sm-6 col-md-4">
     <div class="card mb-2"><span class="card-header h5 text-truncate">${data.name}</span>
     <div class="card-body">
     <div class="row gx-1 gy-0">

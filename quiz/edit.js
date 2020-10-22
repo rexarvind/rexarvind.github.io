@@ -88,12 +88,12 @@ const editQues=id=>{
     if(data.id == id){
       quesID.value=data.id
       ques.value=data.ques
-      ans1.value=data.ans1
-      ans2.value=data.ans2
+      ans1.innerHTML=data.ans1
+      ans2.innerHTML=data.ans2
       ans3.value=data.ans3
       ans4.value=data.ans4
       correct.value=data.correct
-      desc.value=data.desc
+      desc.innerHTML=data.desc
     }
   })
 }
@@ -207,13 +207,13 @@ submitBtn.addEventListener("click", ()=>{
   let fd=new FormData()
   fd.append("uid", userID)
   fd.append("id", quesID.value)
-  fd.append("ques", ques.value)
-  fd.append("ans1", ans1.value)
+  fd.append("ques", ques.innerText)
+  fd.append("ans1", ans1.innerText)
   fd.append("ans2", ans2.value)
   fd.append("ans3", ans3.value)
-  fd.append("ans4", ans4.value)
+  fd.append("ans4", ans4.innerText)
   fd.append("correct", correct.value)
-  fd.append("desc", desc.value)
+  fd.append("desc", desc.innerText)
   var xhr=new XMLHttpRequest()
   xhr.open("POST", ADD_QUES, true)
   xhr.onreadystatechange = function(){

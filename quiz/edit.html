@@ -54,20 +54,21 @@
 <div class="card-body">
 <input type="hidden" id="quesID" value="">
 
-<label for="ques" class="form-label mb-0">Enter Question</label>
-<textarea id="ques" class="form-control p-2" placeholder="Enter your question here..."></textarea>
+<label class="form-label mb-0">Enter Question</label>
+<div id="ques" class="form-control overflow-auto mb-3" style="max-height:99px" contenteditable="true"></div>
 
-<label for="ans1" class="form-label mb-0">Choice 1.</label>
-<input type="text" id="ans1" class="form-control p-2 mb-3" placeholder="Blue" />
+<label class="form-label mb-0">Choice 1.</label>
+<div id="ans1" class="form-control overflow-auto mb-3" contenteditable="true"></div>
 
-<label for="ans2" class="form-label mb-0">Choice 2.</label>
-<input type="text" id="ans2" class="form-control p-2 mb-3" placeholder="Blue" />
+<label class="form-label mb-0">Choice 2.</label>
+<div id="ans2" class="form-control overflow-auto mb-3" contenteditable="true"></div>
 
-<label for="ans3" class="form-label mb-0">Choice 3.</label>
-<input type="text" id="ans3" class="form-control p-2 mb-3" placeholder="Blue" />
+<label class="form-label mb-0">Choice 3.</label>
+<div id="ans3" class="form-control overflow-auto mb-3" contenteditable="true"></div>
 
-<label for="ans4" class="form-label mb-0">Choice 4.</label>
-<input type="text" id="ans4" class="form-control p-2 mb-3" placeholder="Blue" />
+<label class="form-label mb-0">Choice 4.</label>
+<div id="ans4" class="form-control overflow-auto mb-3" contenteditable="true"></div>
+
 
 <label for="correct" class="form-label mb-0">Enter correct choice number</label>
 <div class="input-group mb-3">
@@ -75,9 +76,9 @@
 <input type="number" min="1" max="4" class="form-control" id="correct" placeholder="2">
 </div>
 
-<label for="desc" class="form-label mb-0">Answer Description</label>
-<textarea id="desc" class="form-control p-2" placeholder="Describe answer..."></textarea>
-<div class="form-text">Remaining Characters: <span id="descCounter">0</span></div>
+<label class="form-label mb-0">Answer Description</label>
+<div id="desc" class="form-control overflow-auto mb-3" style="max-height:99px" contenteditable="true"></div>
+
 
 </div>
 <div class="card-footer">

@@ -18,7 +18,7 @@ const description=_("description")
 let score=quesCounter=0;
 let acceptAns=false;
 let availableQues=[];
-let userID, quizPath
+let userID, quizPath, maxScore
 
 /* use custom alert by alertBS(x) */
 const alertBSModal=_("alertBSModal")
@@ -99,6 +99,7 @@ const startQuiz=data=>{
   if(availableQues.length < MAX_QUES){
     MAX_QUES = availableQues.length
   }
+  maxScore=CORRECT_BONUS * MAX_QUES;
   getNewQues();
 }
 
@@ -257,7 +258,7 @@ answers.forEach((answer)=>{
 /* increase and show score */
 incrementScore=num=>{
   score+=num;
-  scoreText.innerText=score;
+  scoreText.innerText=score+" / "+maxScore;
 }
 
 

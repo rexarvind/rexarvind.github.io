@@ -207,7 +207,7 @@ const getAllQues=()=>{
 fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
-    totalRows=res.data[0]
+    totalRows=res.data
     alertBS(totalRows)
     request_page(1);
   } else {

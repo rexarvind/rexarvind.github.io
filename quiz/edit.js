@@ -146,6 +146,12 @@ const showQues=data=>{
 const checkQuesRes=res=>{
   if(res.status==true){
     showQues(res.data)
+    fetch(COUNT_QUES).then(res=>res.json())
+    .then(res=>{
+      if(res.status==true){
+        totalQuesAdded.innerHTML="Total Questions: "+res.data;
+      }
+    })
   } else {
     alertBS(res.message)
   }
@@ -200,7 +206,6 @@ function request_page(pn){
     }
   }
   pagination_controls.innerHTML=paginationCtrls
-  totalQuesAdded.innerHTML="Total Questions: "+totalRows
 }
 
 const getAllQues=()=>{
@@ -208,8 +213,8 @@ fetch(COUNT_QUES).then(res=>res.json())
 .then(res=>{
   if(res.status==true){
     totalRows=res.data
-    alertBS(totalRows)
-    request_page(1);
+    totalQuesAdded.innerHTML="Total Questions: "+totalRows;
+    request_page(1)
   } else {
     alertBS(res.message)
   }

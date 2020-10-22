@@ -65,11 +65,12 @@ const shave=(str, n)=>
 
 const showQues=data=>{
   let output=""
-  data.forEach((data, index)=>{
-    output+=`<div class="card">
-${index}<br>${data.ques}
-</div>
-  `
+  data.forEach((data)=>{
+    output+=`<div class="col-sm-6 col-md-4">
+    <div class="card p-2">
+    ${data.ques}<br>1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
+    </div>
+    </div>`
   })
   results_box.innerHTML=output
 }

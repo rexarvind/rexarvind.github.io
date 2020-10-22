@@ -193,7 +193,7 @@ fetch(COUNT_HIGH_SCORE)
 .then(res=>res.json())
 .then(res=>{
   if(res.status==true){
-    totalRows=res.data[0]
+    totalRows=res.data
     request_page(1);
   } else {
     alertBS(res.message)

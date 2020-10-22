@@ -157,7 +157,7 @@ function request_page(pn){
   let last=Math.ceil(totalRows/rpp)
   if(last < 1){last = 1}
   results_box.innerHTML='<div class="text-center mb-5"><div class="spinner-border text-light my-5" role="status"></div></div>';
-    totalQuesAdded.innerHTML="Total Questions: "+totalRows
+    
 
   let fd=new FormData()
   fd.append("uid", userID)

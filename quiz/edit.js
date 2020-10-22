@@ -63,6 +63,17 @@ const shave=(str, n)=>
 (str.length>n) ? str.substr(0, n-2)+'..' : str;
 
 
+const editQues=(q,a1,a2,a3,a4,c,d)=>{
+ques.value=q
+ans1.value=a1
+ans2.value=a2
+ans3.value=a3
+ans4.value=a4
+correct.value=c
+desc.value=d
+}
+
+
 const showQues=data=>{
   let output=""
   data.forEach((data)=>{
@@ -71,7 +82,7 @@ const showQues=data=>{
     <span class="card-header h5">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer d-flex justify-content-between">
     <button class="btn btn-danger btn-sm">Delete</button>
-    <button class="btn btn-success btn-sm">Edit</button>
+    <button onclick="editQues('${data.ques}','${data.ans1}','${data.ans2}','${data.ans3}','${data.ans4}','${data.correct}','${data.desc}')" class="btn btn-success btn-sm">Edit</button>
     <button onclick="alertBS('${data.desc}')" class="btn btn-dark btn-sm">Description</button>
     </div>
     </div>

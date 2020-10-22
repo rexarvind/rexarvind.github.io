@@ -6,6 +6,7 @@ const guestCard=_("guestCard")
 const loginBtn=_("loginBtn")
 const logoutBtn=_("logoutBtn")
 const userCard=_("userCard")
+const totalQuesAdded=_("totalQuesAdded")
 const quesID=_("quesID")
 const ques=_("ques")
 const ans1=_("ans1")
@@ -199,6 +200,7 @@ function request_page(pn){
     }
   }
   pagination_controls.innerHTML=paginationCtrls
+  totalQuesAdded.innerHTML="Total Questions: "+totalRows
 }
 
 const getAllQues=()=>{

@@ -7,6 +7,12 @@ const loginBtn=_("loginBtn")
 const userCard=_("userCard")
 const ques=_("ques")
 const quesCounter=_("quesCounter")
+const ans1=_("ans1")
+const ans2=_("ans2")
+const ans3=_("ans3")
+const ans4=_("ans4")
+const correct=_("correct")
+const desc=_("desc")
 const submitBtn=_("submitBtn")
 const pagination_controls=_("paginationBtns")
 const results_box=_("results_box")
@@ -78,7 +84,7 @@ function request_page(pn){
     }
   }
   xhr.onerror = function(){
-    alert("Request Error...")
+    alertBS("Request Error...")
   }
   xhr.send(fd)
 
@@ -134,6 +140,8 @@ submitBtn.addEventListener("click", ()=>{
   fd.append("ans2", shave(ans2.value,250))
   fd.append("ans3", shave(ans3.value,250))
   fd.append("ans4", shave(ans4.value,250))
+  fd.append("correct", shave(correct.value,1))
+  fd.append("desc", shave(desc.value,250))
   var xhr=new XMLHttpRequest()
   xhr.open("POST", ADD_URL, true)
   xhr.onreadystatechange = function(){

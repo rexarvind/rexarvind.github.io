@@ -116,7 +116,7 @@ const showQues=data=>{
   data.forEach((data)=>{
     output+=`<div class="col-sm-6 col-md-4">
     <div class="card h-100">
-    <span class="card-header h6">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
+    <span class="card-header h6" style="white-space:pre-wrap">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
     </div><div class="card-footer d-flex justify-content-between">
     <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
     <button onclick="editQues('${data.id}')" class="btn btn-success btn-sm flex-fill">Edit</button>

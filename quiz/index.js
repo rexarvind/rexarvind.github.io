@@ -3,6 +3,7 @@ const _=id=>document.getElementById(id)
 
 /* get DOM elements */
 const playBtn=_("playBtn")
+const logoutBtn=_("logoutBtn")
 const pagination_controls=_("paginationBtns")
 const results_box=_("results_box")
 
@@ -36,10 +37,12 @@ auth.onAuthStateChanged(user=>{
     playBtn.addEventListener("click", startQuiz)
     playBtn.disabled=""
     playBtn.innerText="Start Quiz"
+    logoutBtn.classList.remove("d-none")
   } else {
     playBtn.addEventListener("click", loginUser)
     playBtn.disabled=""
     playBtn.innerText="Login to Start Quiz"
+    logoutBtn.classList.add("d-none")
   }
 })
 
@@ -53,6 +56,15 @@ const loginUser=()=>{
     playBtn.innerText="Start Game"
   }).catch(error=>alertBS(error))
 }
+
+
+/* logout */
+logoutBtn.addEventListener("click", ()=>{
+let user=firebase.auth().currentUser
+auth.signOut()
+.then(()=>alertBS("Logged out."))
+.catch(error=>alertBS(error))
+})
 
 
 /* trim extra letters */

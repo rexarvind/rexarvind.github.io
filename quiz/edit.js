@@ -15,6 +15,7 @@ const ans4=_("ans4")
 const correct=_("correct")
 const desc=_("desc")
 const submitBtn=_("submitBtn")
+const clearForm=_("clearForm")
 const pagination_controls=_("paginationBtns")
 const results_box=_("results_box")
 
@@ -72,6 +73,18 @@ let user=firebase.auth().currentUser
 auth.signOut()
 .then(()=>alertBS("Logged out."))
 .catch(error=>alertBS(error))
+})
+
+
+clearForm.addEventListener("click", ()=>{
+  quesID.value=""
+  ques.innerHTML=""
+  ans1.innerHTML=""
+  ans2.innerHTML=""
+  ans3.innerHTML=""
+  ans4.innerHTML=""
+  correct.value=""
+  desc.innerHTML=""
 })
 
 

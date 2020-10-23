@@ -22,10 +22,15 @@
 <div class="card my-5 mx-auto">
 <span class="card-header h5 text-center">Annual Developer Quiz</span>
 <div class="card-body">
-<p>A little paragraph describing what it is.</p>
+<p>Welcome, this quiz is a quick way to refresh your web development knowledge and learn something new at the same time. To make this quiz interesting we are shuffling questions and answers both at the server side and the client side; and we will give you certificate of successful completion and show your scores here. More questions are added every week and as JavaScript is the leader in web development, more questions will be related to it. Checkout the rules below before starting the quiz and best of luck&#33;</p>
 <ul>
-<li>You will have 30 seconds to answer the question.</li>
-<li>You need to login to start the quiz, so that we can give you Certificate on successful completion.</li>
+<li>You will have only 30 seconds to answer each question.</li>
+<li>Once you select your answer, it can&apos;t be undone.</li>
+<li>You can&apos;t select any option once time goes off.</li>
+<li>You&apos;ll get points on the basis of correct answer.</li>
+<li>There is no negative marking.</li>
+<li>You will get certificate if score atleast 50%.</li>
+<li>You need to login to start the quiz.</li>
 </ul>
 </div>
 <div class="card-footer">
@@ -83,24 +88,5 @@
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
 <script src="../lib/bootstrap.bundle.min.js"></script>
-<script>
-var firebaseConfig={
-apiKey:"AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU",
-authDomain:"rexarvind.firebaseapp.com",
-databaseURL:"https://rexarvind.firebaseio.com",
-projectId:"rexarvind",
-storageBucket:"rexarvind.appspot.com",
-messagingSenderId:"685927662051",
-appId:"1:685927662051:web:252add00d42a851bc320d6",
-measurementId:"G-CCNCD2RK1F"}
-firebase.initializeApp(firebaseConfig)
-const auth=firebase.auth()
-const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const ADD_USER=ROOT_URL+"/api/quiz/add-user"
-const COUNT_HIGH_SCORE=ROOT_URL+"/api/quiz/count-high-score"
-const LIMIT_HIGH_SCORE=ROOT_URL+"/api/quiz/limit-high-score.php"
-
-let rpp = 6;
-</script>
 <script src="index.js"></script>
 </body></html>

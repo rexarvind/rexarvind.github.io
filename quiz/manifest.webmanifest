@@ -1,0 +1,30 @@
+{
+  "name": "Quiz App",
+  "short_name": "Quiz App",
+  "start_url": "/quiz/index.html",
+  "theme_color": "#343a40",
+  "background_color": "#343a40",
+  "description": "Quiz Web App.",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/quiz/quiz-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/quiz/quiz-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable" 
+    }
+  ]
+}
+
+

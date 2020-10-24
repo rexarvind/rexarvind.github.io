@@ -2,10 +2,11 @@
   "name": "RexArvind Web Services",
   "short_name": "RexArvind",
   "start_url": "/index.html",
-  "theme_color": "#212121",
-  "background_color": "#212121",
+  "theme_color": "#343a40",
+  "background_color": "#343a40",
   "description": "Affordable website solutions.",
-  "display": "standalone",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -25,3 +26,4 @@
     }
   ]
 }
+

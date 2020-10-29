@@ -1,12 +1,16 @@
 [
 
-{"text":"JavaScript API Playground",
-"img":"360.png",
-"link":"https://rexarvind.github.io/api/"},
-
 {"text":"Ranjan Commerce Tutorials",
 "img":"ranjan-commerce-tutorials.webp",
 "link":"https://ranjancommercetutorials.000webhostapp.com/"},
+
+{"text":"Quiz Web App",
+"img":"quiz.png",
+"link":"https://rexarvind.github.io/quiz/"},
+
+{"text":"JavaScript API Playground",
+"img":"360.png",
+"link":"https://rexarvind.github.io/api/"},
 
 {"text":"App Landing Page",
 "img":"app-landing-page.webp",

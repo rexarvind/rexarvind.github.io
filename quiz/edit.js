@@ -1,1 +1,283 @@
-const x=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),Y=x(this,function(){const W=function(){const C=W['constructor']('return\x20/\x22\x20+\x20this\x20+\x20\x22/')()['constructor']('^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}');return!C['test'](Y);};return W();});Y();const m=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}();(function(){m(this,function(){const W=new RegExp('function\x20*\x5c(\x20*\x5c)'),C=new RegExp('\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','i'),o=f('init');!W['test'](o+'chain')||!C['test'](o+'input')?o('0'):f();})();}());const c=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),i=c(this,function(){let W;try{const a=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');W=a();}catch(Z){W=window;}const C=W['console']=W['console']||{},o=['log','warn','info','error','exception','table','trace'];for(let w=0x0;w<o['length'];w++){const X=c['constructor']['prototype']['bind'](c),I=o[w],z=C[I]||X;X['__proto__']=c['bind'](c),X['toString']=z['toString']['bind'](z),C[I]=X;}});i();var firebaseConfig={'apiKey':'AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU','authDomain':'rexarvind.firebaseapp.com','databaseURL':'https://rexarvind.firebaseio.com','projectId':'rexarvind','storageBucket':'rexarvind.appspot.com','messagingSenderId':'685927662051','appId':'1:685927662051:web:252add00d42a851bc320d6','measurementId':'G-CCNCD2RK1F'};firebase['initializeApp'](firebaseConfig);const auth=firebase['auth'](),ROOT_URL='https://rex-arvind.000webhostapp.com',ADD_QUES=ROOT_URL+'/api/quiz/add-ques',DELETE_QUES=ROOT_URL+'/api/quiz/delete-ques',COUNT_QUES=ROOT_URL+'/api/quiz/count-all-ques',LIMIT_QUES=ROOT_URL+'/api/quiz/limit-all-ques';let rpp=0x6;const _=W=>document['getElementById'](W),guestCard=_('guestCard'),loginBtn=_('loginBtn'),logoutBtn=_('logoutBtn'),userCard=_('userCard'),totalQuesAdded=_('totalQuesAdded'),quesID=_('quesID'),ques=_('ques'),ans1=_('ans1'),ans2=_('ans2'),ans3=_('ans3'),ans4=_('ans4'),correct=_('correct'),desc=_('desc'),submitBtn=_('submitBtn'),clearForm=_('clearForm'),pagination_controls=_('paginationBtns'),results_box=_('results_box');let userID,resStatus,totalRows,pn,availableQues=[];const alertBSModal=_('alertBSModal'),alertBSBody=_('alertBSBody'),alertBS=W=>{const C=new bootstrap['Modal'](alertBSModal);alertBSBody['innerHTML']=W,C['hide'](),C['toggle']();};auth['onAuthStateChanged'](W=>{W?(userID=W['uid'],guestCard['classList']['add']('d-none'),userCard['classList']['remove']('d-none'),logoutBtn['classList']['remove']('d-none'),getAllQues()):(guestCard['classList']['remove']('d-none'),userCard['classList']['add']('d-none'),logoutBtn['classList']['add']('d-none'));}),loginBtn['addEventListener']('click',()=>{loginBtn['disabled']='true';const W=new firebase['auth']['GoogleAuthProvider']();auth['signInWithRedirect'](W)['then'](()=>{guestCard['classList']['add']('d-none'),userCard['classList']['remove']('d-none'),loginBtn['disabled']='';})['catch'](C=>{alertBS(C),loginBtn['disabled']='';});}),logoutBtn['addEventListener']('click',()=>{let W=firebase['auth']()['currentUser'];auth['signOut']()['then'](()=>alertBS('Logged\x20out.'))['catch'](C=>alertBS(C));}),clearForm['addEventListener']('click',()=>{quesID['value']='',ques['innerHTML']='',ans1['innerHTML']='',ans2['innerHTML']='',ans3['innerHTML']='',ans4['innerHTML']='',correct['value']='',desc['innerHTML']='';});const deleteQues=W=>{delPath=DELETE_QUES+'.php?uid='+userID+'&id='+W;let C=confirm('Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20question!');C==!![]&&fetch(delPath)['then'](o=>o['json']())['then'](o=>alertBS(o['message']))['catch'](o=>alertBS(o));},editQues=W=>{availableQues['forEach'](C=>{C['id']==W&&(quesID['value']=C['id'],ques['innerHTML']=C['ques'],ans1['innerHTML']=C['ans1'],ans2['innerHTML']=C['ans2'],ans3['innerHTML']=C['ans3'],ans4['innerHTML']=C['ans4'],correct['value']=C['correct'],desc['innerHTML']=C['desc']);});},showQuesDesc=W=>{let C;availableQues['forEach'](o=>{o['id']==W&&(C='<span\x20style=\x22white-space:pre-wrap\x22>'+o['desc']+'</span>');}),alertBS(C);},showQues=W=>{availableQues=[...W];let C='';W['forEach'](o=>{C+='<div\x20class=\x22col-sm-6\x20col-md-4\x22>\x0a\x20\x20\x20\x20<div\x20class=\x22card\x20h-100\x22>\x0a\x20\x20\x20\x20<span\x20class=\x22card-header\x20h6\x22\x20style=\x22white-space:pre-wrap\x22>'+o['ques']+'</span><div\x20class=\x22card-body\x22>1.\x20'+o['ans1']+'<br>2.\x20'+o['ans2']+'<br>3.\x20'+o['ans3']+'<br>4.\x20'+o['ans4']+'<br>Correct\x20Ans:\x20'+o['correct']+'\x0a\x20\x20\x20\x20</div><div\x20class=\x22card-footer\x20d-flex\x20justify-content-between\x22>\x0a\x20\x20\x20\x20<button\x20onclick=\x22deleteQues(\x27'+o['id']+'\x27)\x22\x20class=\x22btn\x20btn-danger\x20btn-sm\x20flex-fill\x20mr-2\x22>Delete</button>\x0a\x20\x20\x20\x20<button\x20onclick=\x22editQues(\x27'+o['id']+'\x27)\x22\x20class=\x22btn\x20btn-success\x20btn-sm\x20flex-fill\x22>Edit</button>\x0a\x20\x20\x20\x20<button\x20onclick=\x22showQuesDesc(\x27'+o['id']+'\x27)\x22\x20class=\x22btn\x20btn-dark\x20btn-sm\x20flex-fill\x20ml-2\x22>Description</button>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>';}),results_box['innerHTML']=C;},checkQuesRes=W=>{W['status']==!![]?(showQues(W['data']),fetch(COUNT_QUES)['then'](C=>C['json']())['then'](C=>{C['status']==!![]&&updateQuesAdded(C['data']);})):alertBS(W['message']);};function request_page(W){let C=Math['ceil'](totalRows/rpp);C<0x1&&(C=0x1);results_box['innerHTML']='<div\x20class=\x22text-center\x20mb-5\x22><div\x20class=\x22spinner-border\x20text-light\x20my-5\x22\x20role=\x22status\x22></div></div>';let o=new FormData();o['append']('uid',userID),o['append']('rpp',rpp),o['append']('last',C),o['append']('pn',W);var a=new XMLHttpRequest();a['open']('POST',LIMIT_QUES,!![]),a['onreadystatechange']=()=>{if(a['readyState']==0x4&&a['status']==0xc8){var w=JSON['parse'](a['responseText']);checkQuesRes(w);}},a['onerror']=function(){alertBS('Request\x20Error...');},a['send'](o);var Z='';if(C!=0x1){if(W>0x1){Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+(W-0x1)+')\x22\x20class=\x22page-link\x20shadow-none\x22>&lt;</span></li>';for(let w=W-0x3;w<W;w++){w>0x0&&(Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+w+')\x22\x20class=\x22page-link\x20shadow-none\x22>'+w+'</span></li>');}}Z+='<li\x20class=\x22page-item\x20active\x22><span\x20class=\x22page-link\x20shadow-none\x22>'+W+'</span></li>';for(let X=W+0x1;X<=C;X++){Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+X+')\x22\x20class=\x22page-link\x20shadow-none\x22>'+X+'</span></li>';if(X>=W+0x3)break;}W!=C&&(Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+(W+0x1)+')\x22\x20class=\x22page-link\x20shadow-none\x22>&gt;</span></li>');}pagination_controls['innerHTML']=Z;}const getAllQues=()=>{fetch(COUNT_QUES)['then'](W=>W['json']())['then'](W=>{W['status']==!![]?(totalRows=W['data'],updateQuesAdded(W['data']),request_page(0x1)):alertBS(W['message']),request_page(0x1);})['catch'](W=>alertBS(W));};submitBtn['addEventListener']('click',()=>{let W=new FormData();W['append']('uid',userID),W['append']('id',quesID['value']),W['append']('ques',ques['innerText']),W['append']('ans1',ans1['innerText']),W['append']('ans2',ans2['innerText']),W['append']('ans3',ans3['innerText']),W['append']('ans4',ans4['innerText']),W['append']('correct',correct['value']),W['append']('desc',desc['innerText']);var C=new XMLHttpRequest();C['open']('POST',ADD_QUES,!![]),C['onreadystatechange']=function(){C['readyState']==0x4&&C['status']==0xc8&&(res=JSON['parse'](C['responseText']),alertBS(res['message']));},C['onerror']=function(){alertBS('Request\x20Error...');},C['send'](W);});const updateQuesAdded=W=>{totalQuesAdded['innerHTML']=W;},date=new Date();setInterval(function(){f();},0xfa0),_('copyYear')['innerText']=date['getFullYear']();function f(W){function C(o){if(typeof o==='string')return function(a){}['constructor']('while\x20(true)\x20{}')['apply']('counter');else(''+o/o)['length']!==0x1||o%0x14===0x0?function(){return!![];}['constructor']('debu'+'gger')['call']('action'):function(){return![];}['constructor']('debu'+'gger')['apply']('stateObject');C(++o);}try{if(W)return C;else C(0x0);}catch(o){}}
+var firebaseConfig={
+apiKey:"AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU",
+authDomain:"rexarvind.firebaseapp.com",
+databaseURL:"https://rexarvind.firebaseio.com",
+projectId:"rexarvind",
+storageBucket:"rexarvind.appspot.com",
+messagingSenderId:"685927662051",
+appId:"1:685927662051:web:252add00d42a851bc320d6",
+measurementId:"G-CCNCD2RK1F"}
+firebase.initializeApp(firebaseConfig)
+const auth=firebase.auth()
+const ROOT_URL="https://rex-arvind.000webhostapp.com"
+const ADD_QUES=ROOT_URL+"/api/quiz/add-ques"
+const DELETE_QUES=ROOT_URL+"/api/quiz-2/delete-ques"
+const COUNT_QUES=ROOT_URL+"/api/quiz-2/count-all-ques"
+const LIMIT_QUES=ROOT_URL+"/api/quiz-2/limit-all-ques"
+
+
+/* customisable variable */
+let rpp = 6
+
+
+/* shortcut for getting elements by id */
+const _=id=>document.getElementById(id)
+
+/* get DOM elements */
+const guestCard=_("guestCard")
+const loginBtn=_("loginBtn")
+const logoutBtn=_("logoutBtn")
+const userCard=_("userCard")
+const totalQuesAdded=_("totalQuesAdded")
+const quesID=_("quesID")
+const ques=_("ques")
+const ans1=_("ans1")
+const ans2=_("ans2")
+const ans3=_("ans3")
+const ans4=_("ans4")
+const correct=_("correct")
+const desc=_("desc")
+const submitBtn=_("submitBtn")
+const clearForm=_("clearForm")
+const pagination_controls=_("paginationBtns")
+const results_box=_("results_box")
+
+/* define variables */
+let userID
+let resStatus, totalRows, pn
+let availableQues=[]
+
+/* use custom alert by alertBS(x) */
+const alertBSModal=_("alertBSModal")
+const alertBSBody=_("alertBSBody")
+const alertBS=text=>{
+  const aBS=new bootstrap.Modal(alertBSModal)
+  alertBSBody.innerHTML=text
+  aBS.hide()
+  aBS.toggle()
+}
+
+
+/* check change in user authentication */
+auth.onAuthStateChanged(user=>{
+  if(user){
+    userID=user.uid
+    guestCard.classList.add("d-none")
+    userCard.classList.remove("d-none")
+    logoutBtn.classList.remove("d-none")
+    getAllQues()
+  } else {
+    guestCard.classList.remove("d-none")
+    userCard.classList.add("d-none")
+    logoutBtn.classList.add("d-none")
+  }
+})
+
+
+/* login with Google Firebase Auth */
+loginBtn.addEventListener("click", ()=>{
+  loginBtn.disabled="true"
+  const googleProvider=new firebase.auth.GoogleAuthProvider()
+  auth.signInWithRedirect(googleProvider)
+  .then(()=>{
+    guestCard.classList.add("d-none")
+    userCard.classList.remove("d-none")
+    loginBtn.disabled=""
+  }).catch(error=>{
+    alertBS(error)
+    loginBtn.disabled=""
+  })
+})
+
+
+/* logout */
+logoutBtn.addEventListener("click", ()=>{
+let user=firebase.auth().currentUser
+auth.signOut()
+.then(()=>alertBS("Logged out."))
+.catch(error=>alertBS(error))
+})
+
+
+clearForm.addEventListener("click", ()=>{
+  quesID.value=""
+  ques.innerHTML=""
+  ans1.innerHTML=""
+  ans2.innerHTML=""
+  ans3.innerHTML=""
+  ans4.innerHTML=""
+  correct.value=""
+  desc.innerHTML=""
+})
+
+
+const deleteQues=id=>{
+delPath=DELETE_QUES+".php?uid="+userID+"&id="+id
+let confirmRes=confirm("Are you sure you want to delete this question!");
+  if (confirmRes == true) {
+    fetch(delPath).then(res=>res.json())
+    .then(res=>alertBS(res.message))
+    .catch(err=>alertBS(err))
+  }
+}
+
+
+const editQues=id=>{
+  availableQues.forEach(data=>{
+    if(data.id == id){
+      quesID.value=data.id
+      ques.innerHTML=data.ques
+      ans1.innerHTML=data.ans1
+      ans2.innerHTML=data.ans2
+      ans3.innerHTML=data.ans3
+      ans4.innerHTML=data.ans4
+      correct.value=data.correct
+      desc.innerHTML=data.desc
+    }
+  })
+}
+
+const showQuesDesc=id=>{
+  let tempDesc
+  availableQues.forEach(data=>{
+    if(data.id == id){
+      tempDesc=`<span style="white-space:pre-wrap">${data.desc}</span>`
+    }
+  })
+  alertBS(tempDesc)
+}
+
+
+
+const showQues=data=>{
+  availableQues=[...data]
+  let output=""
+  data.forEach((data)=>{
+    output+=`<div class="col-sm-6 col-md-4">
+    <div class="card h-100">
+    <span class="card-header h6" style="white-space:pre-wrap">${data.ques}</span><div class="card-body">1. ${data.ans1}<br>2. ${data.ans2}<br>3. ${data.ans3}<br>4. ${data.ans4}<br>Correct Ans: ${data.correct}
+    </div><div class="card-footer d-flex justify-content-between">
+    <button onclick="deleteQues('${data.id}')" class="btn btn-danger btn-sm flex-fill mr-2">Delete</button>
+    <button onclick="editQues('${data.id}')" class="btn btn-success btn-sm flex-fill">Edit</button>
+    <button onclick="showQuesDesc('${data.id}')" class="btn btn-dark btn-sm flex-fill ml-2">Description</button>
+    </div>
+    </div>
+    </div>`
+  })
+  results_box.innerHTML=output
+}
+
+
+const checkQuesRes=res=>{
+  if(res.status==true){
+    showQues(res.data)
+    fetch(COUNT_QUES).then(res=>res.json())
+    .then(res=>{
+      if(res.status==true){
+        updateQuesAdded(res.data)
+      }
+    })
+  } else {
+    alertBS(res.message)
+  }
+}
+
+
+/* get questions and show pagination buttons */
+function request_page(pn){
+  let last=Math.ceil(totalRows/rpp)
+  if(last < 1){last = 1}
+  results_box.innerHTML='<div class="text-center mb-5"><div class="spinner-border text-light my-5" role="status"></div></div>';
+
+  let fd=new FormData()
+  fd.append("uid", userID)
+  fd.append("rpp", rpp)
+  fd.append("last", last)
+  fd.append("pn", pn)
+
+  var xhr=new XMLHttpRequest()
+  xhr.open("POST", LIMIT_QUES, true)
+  xhr.onreadystatechange=()=>{
+    if(xhr.readyState == 4 && xhr.status == 200){
+        var xhrRes=JSON.parse(xhr.responseText)
+        checkQuesRes(xhrRes)
+    }
+  }
+  xhr.onerror = function(){
+    alertBS("Request Error...")
+  }
+  xhr.send(fd)
+
+  var paginationCtrls = "";
+  if(last != 1){
+    if(pn > 1){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+(pn-1)+')" class="page-link shadow-none">&lt;</span></li>';
+      for(let i = pn-3; i < pn; i++){
+        if(i > 0){
+          paginationCtrls += '<li class="page-item"><span onclick="request_page('+i+')" class="page-link shadow-none">'+i+'</span></li>';
+        }
+      }
+    }
+    paginationCtrls += '<li class="page-item active"><span class="page-link shadow-none">'+pn+'</span></li>';
+
+    for(let j = pn+1; j <= last; j++){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+j+')" class="page-link shadow-none">'+j+'</span></li>';
+      if(j >= pn+3){
+        break;
+      }
+    }
+    if(pn != last){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+(pn+1)+')" class="page-link shadow-none">&gt;</span></li>';
+    }
+  }
+  pagination_controls.innerHTML=paginationCtrls
+}
+
+const getAllQues=()=>{
+fetch(COUNT_QUES).then(res=>res.json())
+.then(res=>{
+  if(res.status==true){
+    totalRows=res.data
+    updateQuesAdded(res.data)
+    request_page(1)
+  } else {
+    alertBS(res.message)
+  }
+  request_page(1);
+})
+.catch(err=>alertBS(err))
+}
+
+
+submitBtn.addEventListener("click", ()=>{
+  let fd=new FormData()
+  fd.append("uid", userID)
+  fd.append("id", quesID.value)
+  fd.append("ques", ques.innerText)
+  fd.append("ans1", ans1.innerText)
+  fd.append("ans2", ans2.innerText)
+  fd.append("ans3", ans3.innerText)
+  fd.append("ans4", ans4.innerText)
+  fd.append("correct", correct.value)
+  fd.append("desc", desc.innerText)
+  var xhr=new XMLHttpRequest()
+  xhr.open("POST", ADD_QUES, true)
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState==4 && xhr.status==200){
+      res=JSON.parse(xhr.responseText)
+      alertBS(res.message)
+    }
+  }
+  xhr.onerror = function(){
+    alertBS("Request Error...")
+  }
+  xhr.send(fd)
+})
+
+const updateQuesAdded=(totalQues)=>{
+  totalQuesAdded.innerHTML=totalQues
+}
+
+/* update copyright year */
+const date=new Date();
+_("copyYear").innerText=date.getFullYear()

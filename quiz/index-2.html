@@ -1,0 +1,128 @@
+<!doctype html><html lang="en" class="h-100">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Annual Developer Quiz</title>
+<link rel="stylesheet" href="../lib/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/quiz/manifest.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="RexArvind">
+<meta name="application-name" content="RexArvind">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#212121">
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Quiz by RexArvind" />
+<meta property="og:description" content="RexArvind is simple solution for permanent website. Affordable Web design company, Low cost web design. We provide Ecommerce Website, Search Engine Optimization (seo), Website Builder, Digital Marketing (Web promotion), Android App, Domain &amp; Web Hosting services." />
+<meta property="og:url" content="https://rexarvind.me/quiz" />
+<meta property="og:image" content="https://rexarvind.github.io/ogimg/quiz.webp" />
+<meta property="og:image:secure_url" content="https://rexarvind.github.io/ogimg/quiz.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+
+</head><body class="d-flex flex-column h-100 bg-dark">
+<header>
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
+<div class="container-lg">
+<a class="navbar-brand font-weight-bold py-1" href="index.html">RexArvind<span class="text-muted">.me/</span>Quiz</a>
+
+<button class="navbar-toggler shadow-none border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav text-center ml-auto">
+<a id="logoutBtn" class="nav-link d-none" href="#!">Logout</a>
+<a onclick="userAns(this)" class="nav-link" href="#!">My Answers</a>
+<a id="finalPageBtn" class="nav-link d-none" href="#!">My Certificate</a>
+<a href="https://instagram.com/rexarvind" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+</div>
+</div>
+
+
+</div>
+</nav>
+</header>
+
+<main class="flex-shrink-0 pt-2">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-8 col-lg-5">
+<div class="card my-5 mx-auto">
+<span class="card-header h5 text-center">Annual Developer Quiz</span>
+<div class="card-body">
+<p>Welcome, this quiz is a quick way to refresh your web development knowledge and learn something new at the same time. To make this quiz interesting we are shuffling questions and answers both at the server side and the client side; and we will give you certificate of successful completion and show your scores here. More questions are added every week and as JavaScript is the leader in web development, more questions will be related to it. Checkout the rules below before starting the quiz and best of luck&#33;</p>
+<ul>
+<li>You will get 25 questions in total.</li>
+<li>You will have only 30 seconds to answer each question.</li>
+<li>Once you select your answer, it can&apos;t be undone.</li>
+<li>You can&apos;t select any option once time goes off.</li>
+<li>You&apos;ll get 4 points on every correct answer.</li>
+<li>If you leave the quiz or refresh the browser, your score will be set to 0.</li>
+<li>There is no negative marking.</li>
+<li>You will get certificate if you score atleast 50%.</li>
+<li>You need to login to start the quiz.</li>
+</ul>
+<p><b>NOTE:</b> This online quiz system with certificate distribution is available for purchase with customisation and maintenance.
+<br><a href="#!" onclick="buyQuiz()" class="link-dark">Click here for more information.</a></p>
+</div>
+<div class="card-footer">
+<button id="playBtn" class="btn btn-dark btn-block font-weight-bold">Loading...</button>
+<button id="pwaBtn" class="btn btn-outline-dark btn-block font-weight-bold d-none">Download Web App</button>
+</div>
+</div> <!-- card -->
+</div> <!-- col -->
+</div> <!-- row -->
+</div> <!-- container -->
+
+
+<div class="container">
+<ul class="pagination flex-wrap justify-content-center" id="paginationBtns">
+</ul>
+</div>
+
+<div class="container-lg mb-5">
+<div class="row g-2 mb-5" id="results_box"></div>
+</div>
+
+
+
+
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+
+<!-- custom alert modal start -->
+<div class="modal fade" id="alertBSModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header py-2">
+<h5 class="modal-title">Information &#33;</h5>
+<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div id="alertBSBody" class="modal-body" style="white-space:pre-wrap">
+</div>
+<div class="modal-footer py-2">
+<button data-dismiss="modal" class="btn btn-outline-dark w-50">Close</button>
+</div>
+</div> <!-- modal-content -->
+</div> <!-- modal-dialog --> 
+</div> <!-- modal -->
+<!-- custom alert modal end -->
+
+</main>
+
+<footer class="footer mt-auto py-2 bg-dark text-muted text-center border-top border-secondary">
+<div class="container">
+<a href="https://rexarvind.github.io/" target="_blank" rel="noopener noreferrer" class="link-secondary text-decoration-none">RexArvind Web Services &copy; <span id="copyYear"></span></a>
+<p>Page Views: <span id="page-views"></span></p>
+</div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="../lib/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+</body></html>

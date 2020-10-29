@@ -1,1 +1,92 @@
-const x=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),Y=x(this,function(){const W=function(){const C=W['constructor']('return\x20/\x22\x20+\x20this\x20+\x20\x22/')()['constructor']('^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}');return!C['test'](Y);};return W();});Y();const m=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}();(function(){m(this,function(){const W=new RegExp('function\x20*\x5c(\x20*\x5c)'),C=new RegExp('\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','i'),o=f('init');!W['test'](o+'chain')||!C['test'](o+'input')?o('0'):f();})();}());const c=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),i=c(this,function(){let W;try{const a=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');W=a();}catch(Z){W=window;}const C=W['console']=W['console']||{},o=['log','warn','info','error','exception','table','trace'];for(let w=0x0;w<o['length'];w++){const X=c['constructor']['prototype']['bind'](c),I=o[w],z=C[I]||X;X['__proto__']=c['bind'](c),X['toString']=z['toString']['bind'](z),C[I]=X;}});i();const MAX_NAME=0x1c,PASS_SCORE=0x32,ROOT_URL='https://rex-arvind.000webhostapp.com',GET_SCORE=ROOT_URL+'/api/quiz/get-score/',_=W=>document['getElementById'](W),totalScore=_('totalScore'),totalPercentage=_('totalPercentage'),quizKey=_('quizKey'),certificateForm=_('certificateForm'),certificateName=_('certificateName'),certificateBtn=_('certificateBtn'),nameCounter=_('nameCounter'),alertBSModal=_('alertBSModal'),alertBSBody=_('alertBSBody'),alertBS=W=>{const C=new bootstrap['Modal'](alertBSModal);alertBSBody['innerHTML']=W,C['hide'](),C['toggle']();};setInterval(function(){f();},0xfa0);const shave=(W,C)=>W['length']>C?W['substr'](0x0,C-0x2)+'..':W;nameCounter['innerText']=MAX_NAME,uid=sessionStorage['getItem']('key'),sessionStorage['clear'](),quizKey['value']=uid,fetch(GET_SCORE+uid)['then'](W=>W['json']())['then'](W=>{W['status']==!![]?(data=W['data'],totalScore['innerText']=data[0x0]['score'],totalPercentage['innerText']=data[0x0]['percentage'],certificateName['value']=shave(data[0x0]['name'],MAX_NAME),data[0x0]['percentage']>=PASS_SCORE&&certificateForm['classList']['remove']('d-none')):alertBS(W['message']);})['catch'](W=>alertBS('Can\x20not\x20load\x20Scores.<br>'+W)),certificateName['addEventListener']('input',()=>{totalLength=certificateName['value']['length'],nameCounter['innerText']=MAX_NAME-totalLength,counterBox=nameCounter['parentElement'];if(totalLength>MAX_NAME)counterBox['classList']['add']('text-danger'),certificateBtn['disabled']='true';else totalLength<=MAX_NAME&&(counterBox['classList']['remove']('text-danger'),certificateBtn['disabled']='');});const date=new Date();_('copyYear')['innerText']=date['getFullYear']();function f(W){function C(o){if(typeof o==='string')return function(a){}['constructor']('while\x20(true)\x20{}')['apply']('counter');else(''+o/o)['length']!==0x1||o%0x14===0x0?function(){return!![];}['constructor']('debu'+'gger')['call']('action'):function(){return![];}['constructor']('debu'+'gger')['apply']('stateObject');C(++o);}try{if(W)return C;else C(0x0);}catch(o){}}
+/* maximum characters of name on certificate */
+const MAX_NAME=28
+
+/* passing percentage for certificate.
+MAKE SURE TO UPDATE THIS ON SERVER ALSO */
+const PASS_SCORE=50
+
+const ROOT_URL="https://rex-arvind.000webhostapp.com";
+const GET_SCORE=ROOT_URL+"/api/quiz-2/get-score/";
+
+
+/* shortcut for getting elements by id */
+const _=id=>document.getElementById(id)
+
+/* get DOM elements */
+const totalScore=_("totalScore")
+const totalPercentage=_("totalPercentage")
+const quizKey=_("quizKey")
+const certificateForm=_("certificateForm")
+const certificateName=_("certificateName")
+const certificateBtn=_("certificateBtn")
+const nameCounter=_("nameCounter")
+
+/* define variables if any */
+
+
+/* use custom alert by alertBS(x) */
+const alertBSModal=_("alertBSModal")
+const alertBSBody=_("alertBSBody")
+const alertBS=text=>{
+  const aBS=new bootstrap.Modal(alertBSModal)
+  alertBSBody.innerHTML=text
+  aBS.hide()
+  aBS.toggle()
+}
+
+
+/* trim extra letters */
+const shave=(str, n)=>
+(str.length>n) ? str.substr(0, n-2)+'..' : str;
+
+
+/* update name character counter */
+nameCounter.innerText=MAX_NAME
+
+
+/* get user id for fetching score */
+uid=sessionStorage.getItem("uid");
+
+
+/* store user id in form for certificate request */
+quizKey.value=uid
+
+
+/* get score from database */
+fetch(GET_SCORE+uid).then(res=>res.json())
+.then(res=>{
+  if(res.status==true){
+    data=res.data
+    totalScore.innerText=data.score
+    totalPercentage.innerText=data.percentage
+    /* put name in certificate form by default */
+    certificateName.value=shave(data.name,MAX_NAME)
+    /* show certificate form if percent is high */
+    if(data.percentage >= PASS_SCORE){
+    certificateForm.classList.remove("d-none")
+    }
+  } else {
+    alertBS(res.message)
+  }
+})
+.catch(err=>alertBS("Can not load Scores.<br>"+err))
+
+
+/* check length of name for certificate */
+certificateName.addEventListener("input",()=>{
+  totalLength=certificateName.value.length
+  nameCounter.innerText=MAX_NAME-totalLength
+  counterBox=nameCounter.parentElement
+  if(totalLength>MAX_NAME){
+    counterBox.classList.add("text-danger")
+    certificateBtn.disabled="true"
+  } else if(totalLength<=MAX_NAME){
+    counterBox.classList.remove("text-danger")
+    certificateBtn.disabled=""
+  }
+})
+
+
+/* update copyright year */
+const date=new Date();
+_("copyYear").innerText=date.getFullYear()

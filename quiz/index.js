@@ -1,1 +1,347 @@
-const x=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),Y=x(this,function(){const W=function(){const C=W['constructor']('return\x20/\x22\x20+\x20this\x20+\x20\x22/')()['constructor']('^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}');return!C['test'](Y);};return W();});Y();const m=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}();(function(){m(this,function(){const W=new RegExp('function\x20*\x5c(\x20*\x5c)'),C=new RegExp('\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','i'),o=f('init');!W['test'](o+'chain')||!C['test'](o+'input')?o('0'):f();})();}());const c=function(){let W=!![];return function(C,o){const a=W?function(){if(o){const Z=o['apply'](C,arguments);return o=null,Z;}}:function(){};return W=![],a;};}(),i=c(this,function(){let W;try{const a=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');W=a();}catch(Z){W=window;}const C=W['console']=W['console']||{},o=['log','warn','info','error','exception','table','trace'];for(let w=0x0;w<o['length'];w++){const X=c['constructor']['prototype']['bind'](c),I=o[w],z=C[I]||X;X['__proto__']=c['bind'](c),X['toString']=z['toString']['bind'](z),C[I]=X;}});i();var firebaseConfig={'apiKey':'AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU','authDomain':'rexarvind.firebaseapp.com','databaseURL':'https://rexarvind.firebaseio.com','projectId':'rexarvind','storageBucket':'rexarvind.appspot.com','messagingSenderId':'685927662051','appId':'1:685927662051:web:252add00d42a851bc320d6','measurementId':'G-CCNCD2RK1F'};setInterval(function(){f();},0xfa0),firebase['initializeApp'](firebaseConfig);const auth=firebase['auth'](),ROOT_URL='https://rex-arvind.000webhostapp.com',ADD_USER=ROOT_URL+'/api/quiz/add-user',COUNT_HIGH_SCORE=ROOT_URL+'/api/quiz/count-high-score',LIMIT_HIGH_SCORE=ROOT_URL+'/api/quiz/limit-high-score.php';let rpp=0x6;const _=W=>document['getElementById'](W),playBtn=_('playBtn'),logoutBtn=_('logoutBtn'),pagination_controls=_('paginationBtns'),results_box=_('results_box');let userID,userName,userEmail,userPhoto,resStatus,totalRows,pn,buyText;const alertBSModal=_('alertBSModal'),alertBSBody=_('alertBSBody'),alertBS=W=>{const C=new bootstrap['Modal'](alertBSModal);alertBSBody['innerHTML']=W,C['hide'](),C['toggle']();};playBtn['disabled']='true',auth['onAuthStateChanged'](W=>{W?(userID=W['uid'],userName=W['displayName'],userEmail=W['email'],userPhoto=W['photoURL'],playBtn['addEventListener']('click',startQuiz),playBtn['disabled']='',playBtn['innerText']='Start\x20Quiz',logoutBtn['classList']['remove']('d-none')):(playBtn['addEventListener']('click',loginUser),playBtn['disabled']='',playBtn['innerText']='Login\x20to\x20Start\x20Quiz',logoutBtn['classList']['add']('d-none'));});const loginUser=()=>{const W=new firebase['auth']['GoogleAuthProvider']();auth['signInWithRedirect'](W)['then'](()=>{playBtn['addEventListener']('click',startQuiz),playBtn['innerText']='Start\x20Game';})['catch'](C=>alertBS(C));};logoutBtn['addEventListener']('click',()=>{let W=firebase['auth']()['currentUser'];auth['signOut']()['then'](()=>alertBS('Logged\x20out.'))['catch'](C=>alertBS(C));});const shave=(W,C)=>W['length']>C?W['substr'](0x0,C-0x2)+'..':W,checkStatus=W=>{if(W['status']==!![])sessionStorage['setItem']('key',userID),document['location']['href']='quiz.html';else W['status']==![]&&(playBtn['disabled']='',playBtn['innerText']='Start\x20Game',alertBS(W['message']));},startQuiz=()=>{playBtn['disabled']='true',playBtn['innerText']='Loading...';let W=new FormData();W['append']('uid',userID),W['append']('name',shave(userName,0xfa)),W['append']('email',shave(userEmail,0xfa)),W['append']('photoURL',shave(userPhoto,0xfa));var C=new XMLHttpRequest();C['open']('POST',ADD_USER,!![]),C['onreadystatechange']=function(){C['readyState']==0x4&&C['status']==0xc8&&(resStatus=JSON['parse'](C['responseText']),playBtn['disabled']='true',playBtn['innerText']='Redirecting...',checkStatus(resStatus));},C['onerror']=function(){playBtn['disabled']='',playBtn['innerText']='Retry',alertBS('Ajax\x20Request\x20Error...');},C['send'](W);},checkScoreStatus=W=>{if(W['status']==!![]){let C='';data=W['data'],data['forEach'](o=>{C+='<div\x20class=\x22col-sm-6\x20col-md-4\x22>\x0a\x20\x20\x20\x20<div\x20class=\x22card\x20mb-2\x22><span\x20class=\x22card-header\x20h5\x20text-truncate\x22>'+o['name']+'</span>\x0a\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20<div\x20class=\x22row\x20gx-1\x20gy-0\x22>\x0a\x20\x20\x20\x20<p\x20class=\x22col-8\x22>Percentage:\x20'+o['percentage']+'\x20&#37;\x20<br>\x0a\x20\x20\x20\x20Score:\x20'+o['score']+'\x20out\x20of\x20'+o['maxScore']+'<br>Answered:\x20'+o['ques']+'\x20out\x20of\x20'+o['maxQues']+'</p>\x0a<img\x20src=\x22'+o['photoURL']+'\x22\x20class=\x22col-4\x22>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div></div>';}),results_box['innerHTML']=C;}else alertBS(W['message']);};function request_page(W){let C=Math['ceil'](totalRows/rpp);C<0x1&&(C=0x1);results_box['innerHTML']='<div\x20class=\x22text-center\x20mb-5\x22><div\x20class=\x22spinner-border\x20text-light\x20my-5\x22\x20role=\x22status\x22></div></div>';let o=new FormData();o['append']('rpp',rpp),o['append']('last',C),o['append']('pn',W);var a=new XMLHttpRequest();a['open']('POST',LIMIT_HIGH_SCORE,!![]),a['onreadystatechange']=()=>{if(a['readyState']==0x4&&a['status']==0xc8){var w=JSON['parse'](a['responseText']);checkScoreStatus(w);}},a['onerror']=function(){alertBS('Request\x20Error...');},a['send'](o);var Z='';if(C!=0x1){if(W>0x1){Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+(W-0x1)+')\x22\x20class=\x22page-link\x20shadow-none\x22>&lt;</span></li>';for(let w=W-0x3;w<W;w++){w>0x0&&(Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+w+')\x22\x20class=\x22page-link\x20shadow-none\x22>'+w+'</span></li>');}}Z+='<li\x20class=\x22page-item\x20active\x22><span\x20class=\x22page-link\x20shadow-none\x22>'+W+'</span></li>';for(let X=W+0x1;X<=C;X++){Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+X+')\x22\x20class=\x22page-link\x20shadow-none\x22>'+X+'</span></li>';if(X>=W+0x3)break;}W!=C&&(Z+='<li\x20class=\x22page-item\x22><span\x20onclick=\x22request_page('+(W+0x1)+')\x22\x20class=\x22page-link\x20shadow-none\x22>&gt;</span></li>');}pagination_controls['innerHTML']=Z;}fetch(COUNT_HIGH_SCORE)['then'](W=>W['json']())['then'](W=>{W['status']==!![]?(totalRows=W['data'],request_page(0x1)):alertBS(W['message']);})['catch'](W=>alertBS('Can\x20not\x20load\x20High\x20Scores.<br>'+W));const buyQuiz=()=>{buyText='<b>Features\x20of\x20this\x20quiz:</b><br>\x0a<ol>\x0a<li>No\x20limit\x20on\x20generating\x20certificates.\x20Google\x20Forms\x20limits\x20to\x20100\x20per\x20day.</li>\x0a<li>Show\x20high\x20scores\x20with\x20photo\x20and\x20pagination.</li>\x0a<li>Password\x20less\x20login\x20to\x20start\x20the\x20quiz.</li>\x0a<li>Collect\x20emails\x20of\x20participants\x20behind\x20the\x20scenes.</li>\x0a<li>Show\x20answer\x20description,\x20remaining\x20time,\x20remaining\x20questions,\x20and\x20more.</li>\x0a<li>Buy\x20once\x20and\x20make\x20unlimited\x20number\x20of\x20quizzes\x20and\x20certificates.</li>\x0a<li>Secure\x20JavaScript\x20code\x20with\x20deadlock\x20protection.</li>\x0a<li>Using\x20tokens\x20instead\x20of\x20sessions\x20for\x20better\x20login\x20system.</li>\x0a<li>Styled\x20with\x20latest\x20version\x20of\x20Twitter\x20Bootstrap\x20(v5).</li>\x0a<li>Lightweight\x20and\x20Faster\x20with\x20Vanilla\x20JavaScript\x20(No\x20jQuery).</li>\x0a<li>Clean\x20UI\x20and\x20UX.</li>\x0a<li>Responsive\x20design.</li>\x0a<li>Built\x20with\x20Ajax,\x20Fetch,\x20Arrow\x20Functions,\x20Prepared\x20Statements,\x20OOP,\x20JSON.</li>\x0a<li>Well\x20commented\x20JavaScript\x20code.</li>\x0a<li>Free\x20lifetime\x20hosting\x20with\x20GitHub\x20and\x20Netlify.</li>\x0a</ol>\x0a\x0a<b>Pricing\x20details:</b>\x0a<ul>\x0a<li><b>&#8377;\x201,000</b>\x20Get\x20your\x20quiz\x20online\x20with\x20one\x20customised\x20certificate.</li>\x0a<li><b>&#8377;\x201,500</b>\x20Get\x20your\x20quiz\x20online\x20with\x20two\x20customised\x20certificates.</li>\x0a</ul>\x0a\x0a<b>Contact\x20for\x20more\x20details:</b>\x0a<br>\x0aArvind\x20Kumar<br>\x0aFounder\x20of\x20RexArvind\x20Web\x20Services<br>\x0aWhatsapp:\x20&plus;91\x208181\x20040\x20977\x0a',alertBS(buyText);};'serviceWorker'in navigator&&navigator['serviceWorker']['register']('/sw.js')['then'](function(){console['log']('Service\x20Worker\x20Registered');});let deferredPrompt;const pwaBtn=_('pwaBtn');window['addEventListener']('beforeinstallprompt',W=>{W['preventDefault'](),deferredPrompt=W,pwaBtn['classList']['remove']('d-none'),pwaBtn['addEventListener']('click',C=>{pwaBtn['classList']['add']('d-none'),deferredPrompt['prompt'](),deferredPrompt['userChoice']['then'](o=>{o['outcome']==='accepted'?console['log']('User\x20accepted\x20the\x20A2HS\x20prompt'):console['log']('User\x20dismissed\x20the\x20A2HS\x20prompt'),deferredPrompt=null;});});});const date=new Date();_('copyYear')['innerText']=date['getFullYear']();function f(W){function C(o){if(typeof o==='string')return function(a){}['constructor']('while\x20(true)\x20{}')['apply']('counter');else(''+o/o)['length']!==0x1||o%0x14===0x0?function(){return!![];}['constructor']('debu'+'gger')['call']('action'):function(){return![];}['constructor']('debu'+'gger')['apply']('stateObject');C(++o);}try{if(W)return C;else C(0x0);}catch(o){}}
+var firebaseConfig={
+apiKey:"AIzaSyAIBhvdbyFlTqZLgtNA7uTWHymjHOpzyMU",
+authDomain:"rexarvind.firebaseapp.com",
+databaseURL:"https://rexarvind.firebaseio.com",
+projectId:"rexarvind",
+storageBucket:"rexarvind.appspot.com",
+messagingSenderId:"685927662051",
+appId:"1:685927662051:web:252add00d42a851bc320d6",
+measurementId:"G-CCNCD2RK1F"}
+firebase.initializeApp(firebaseConfig)
+const auth=firebase.auth()
+
+const ROOT_URL="https://rex-arvind.000webhostapp.com"
+const ADD_USER=ROOT_URL+"/api/quiz-2/add-user"
+const COUNT_HIGH_SCORE=ROOT_URL+"/api/quiz-2/count-high-score"
+const LIMIT_HIGH_SCORE=ROOT_URL+"/api/quiz-2/limit-high-score.php"
+const USER_ANS=ROOT_URL+"/api/quiz-2/user-ans/"
+
+/* high score results per page */
+let rpp = 6;
+
+/* shortcut for getting elements by id */
+const _=id=>document.getElementById(id)
+
+/* get DOM elements */
+const playBtn=_("playBtn")
+const logoutBtn=_("logoutBtn")
+const finalPageBtn=_("finalPageBtn")
+const pagination_controls=_("paginationBtns")
+const results_box=_("results_box")
+
+/* define variables */
+let userID, userName, userEmail, userPhoto;
+let resStatus, totalRows, pn, buyText;
+
+/* use custom alert by alertBS(x) */
+const alertBSModal=_("alertBSModal")
+const alertBSBody=_("alertBSBody")
+const alertBS=text=>{
+  const aBS=new bootstrap.Modal(alertBSModal)
+  alertBSBody.innerHTML=text
+  /* close any already opened modal */
+  aBS.hide()
+  aBS.toggle()
+}
+
+
+/* enable button after authentication check */
+playBtn.disabled="true"
+
+
+/* check change in user authentication */
+auth.onAuthStateChanged(user=>{
+  if(user){
+    userID=user.uid
+    userName=user.displayName
+    userEmail=user.email
+    userPhoto=user.photoURL
+    playBtn.addEventListener("click", startQuiz)
+    playBtn.disabled=""
+    playBtn.innerText="Start Quiz"
+    logoutBtn.classList.remove("d-none")
+    finalPageBtn.classList.remove("d-none")
+  } else {
+    playBtn.addEventListener("click", loginUser)
+    playBtn.disabled=""
+    playBtn.innerText="Login to Start Quiz"
+    logoutBtn.classList.add("d-none")
+    finalPageBtn.classList.add("d-none")
+  }
+})
+
+
+/* login with Google Firebase Auth */
+const loginUser=()=>{
+  const googleProvider=new firebase.auth.GoogleAuthProvider()
+  auth.signInWithRedirect(googleProvider)
+  .then(()=>{
+    playBtn.addEventListener("click", startQuiz)
+    playBtn.innerText="Start Game"
+  }).catch(error=>alertBS(error))
+}
+
+
+/* logout */
+logoutBtn.addEventListener("click", ()=>{
+  let user=firebase.auth().currentUser
+  auth.signOut()
+  .then(()=>alertBS("Logged out."))
+  .catch(error=>alertBS(error))
+})
+
+
+/* trim extra letters */
+const shave=(str, n)=>
+(str.length>n) ? str.substr(0, n-2)+'..' : str;
+
+
+/* check API response status */
+const checkStatus=resStatus=>{
+  if(resStatus.status==true){
+    sessionStorage.setItem("key", userID)
+    document.location.href="quiz.html"
+  } else if(resStatus.status==false){
+    playBtn.disabled=""
+    playBtn.innerText="Start Game"
+    alertBS(resStatus.message)
+  }
+}
+
+
+/* save user data on database */
+const startQuiz=()=>{
+  playBtn.disabled="true"
+  playBtn.innerText="Loading..."
+  let fd=new FormData()
+  fd.append("uid", userID)
+  fd.append("name", shave(userName,250))
+  fd.append("email", shave(userEmail,250))
+  fd.append("photoURL", shave(userPhoto,250))
+  var xhr=new XMLHttpRequest()
+  xhr.open("POST", ADD_USER, true)
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState==4 && xhr.status==200){
+      resStatus=JSON.parse(xhr.responseText)
+      playBtn.disabled="true"
+      playBtn.innerText="Redirecting..."
+      checkStatus(resStatus)
+    }
+  }
+  xhr.onerror = function(){
+    playBtn.disabled=""
+    playBtn.innerText="Retry"
+    alertBS("Ajax Request Error...")
+  }
+  xhr.send(fd)
+}
+
+
+
+
+/* check high score response from API */
+const checkScoreStatus=res=>{
+  if(res.status==true){
+    let output=""
+    data=res.data
+    data.forEach(data=>{
+    output+=`<div class="col-sm-6 col-md-4">
+    <div class="card"><span class="card-header h5 text-truncate">${data.name}</span>
+    <div class="card-body">
+    <div class="row gx-1 gy-0">
+    <p class="col-8">Percentage: ${data.percentage} &#37; <br>
+    Score: ${data.score} out of ${data.maxScore}<br>Answered: ${data.ques} out of ${data.maxQues}</p>
+<img src="${data.photoURL}" class="col-4">
+    </div>
+    </div>
+    </div></div>`
+    })
+    results_box.innerHTML=output
+  } else {
+    alertBS(res.message)
+  }
+}
+
+
+
+/* get scores and show pagination buttons */
+function request_page(pn){
+  let last=Math.ceil(totalRows/rpp)
+  if(last < 1){last = 1}
+  results_box.innerHTML='<div class="text-center mb-5"><div class="spinner-border text-light my-5" role="status"></div></div>';
+  let fd=new FormData()
+  fd.append("rpp", rpp)
+  fd.append("last", last)
+  fd.append("pn", pn)
+
+  var xhr=new XMLHttpRequest()
+  xhr.open("POST", LIMIT_HIGH_SCORE, true)
+  xhr.onreadystatechange=()=>{
+    if(xhr.readyState == 4 && xhr.status == 200){
+        var xhrRes=JSON.parse(xhr.responseText)
+        checkScoreStatus(xhrRes)
+    }
+  }
+  xhr.onerror = function(){
+    alertBS("Request Error...")
+  }
+  xhr.send(fd)
+
+  var paginationCtrls = "";
+  if(last != 1){
+    if(pn > 1){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+(pn-1)+')" class="page-link shadow-none">&lt;</span></li>';
+      for(let i = pn-3; i < pn; i++){
+        if(i > 0){
+          paginationCtrls += '<li class="page-item"><span onclick="request_page('+i+')" class="page-link shadow-none">'+i+'</span></li>';
+        }
+      }
+    }
+    paginationCtrls += '<li class="page-item active"><span class="page-link shadow-none">'+pn+'</span></li>';
+
+    for(let j = pn+1; j <= last; j++){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+j+')" class="page-link shadow-none">'+j+'</span></li>';
+      if(j >= pn+3){
+        break;
+      }
+    }
+    if(pn != last){
+      paginationCtrls += '<li class="page-item"><span onclick="request_page('+(pn+1)+')" class="page-link shadow-none">&gt;</span></li>';
+    }
+  }
+  pagination_controls.innerHTML=paginationCtrls
+}
+
+
+/* count total users for displaying scores */
+fetch(COUNT_HIGH_SCORE)
+.then(res=>res.json())
+.then(res=>{
+  if(res.status==true){
+    totalRows=res.data
+    request_page(1);
+  } else {
+    alertBS(res.message)
+  }
+})
+.catch(err=>alertBS("Can not load High Scores.<br>"+err))
+
+
+
+const buyQuiz=()=>{
+buyText=`<b>Features of this quiz:</b><br>
+<ol>
+<li>No limit on generating certificates. Google Forms limits to 100 per day.</li>
+<li>Show high scores with photo and pagination.</li>
+<li>Password less login to start the quiz.</li>
+<li>Collect emails of participants behind the scenes.</li>
+<li>Show answer description, remaining time, remaining questions, and more.</li>
+<li>Buy once and make unlimited number of quizzes and certificates.</li>
+<li>Secure JavaScript code with deadlock protection.</li>
+<li>Using tokens instead of sessions for better login system.</li>
+<li>Styled with latest version of Twitter Bootstrap (v5).</li>
+<li>Lightweight and Faster with Vanilla JavaScript (No jQuery).</li>
+<li>Clean UI and UX.</li>
+<li>Responsive design.</li>
+<li>Built with Ajax, Fetch, Arrow Functions, Prepared Statements, OOP, JSON.</li>
+<li>Well commented JavaScript code.</li>
+<li>Free lifetime hosting with GitHub and Netlify.</li>
+</ol>
+
+<b>Pricing details:</b>
+<ul>
+<li><b>&#8377; 1,000</b> Get your quiz online with one customised certificate.</li>
+<li><b>&#8377; 1,500</b> Get your quiz online with two customised certificates.</li>
+<li><b>&#8377; 2,000</b> Get your quiz online with four customised certificates.</li>
+</ul>
+
+<b>Contact for more details:</b>
+<br>
+Arvind Kumar<br>
+Founder of RexArvind Web Services<br>
+Whatsapp: &plus;91 8181 040 977
+`
+
+alertBS(buyText)
+
+}
+
+
+
+if ('serviceWorker' in navigator){
+  navigator.serviceWorker
+  .register('/sw.js')
+  .then(function(){
+    console.log('Service Worker Registered')
+  })
+}
+
+let deferredPrompt;
+const pwaBtn = _("pwaBtn");
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  pwaBtn.classList.remove("d-none");
+
+  pwaBtn.addEventListener('click', (e) => {
+    pwaBtn.classList.add("d-none");
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) =>{
+    if (choiceResult.outcome === 'accepted') {
+    console.log('User accepted the A2HS prompt');
+    } else {
+    console.log('User dismissed the A2HS prompt');
+    }
+    deferredPrompt = null;
+    });
+  });
+});
+
+
+
+const userAns=(el)=>{
+  el.classList.add("disabled")
+  fetch(USER_ANS+userID).then(res=>res.json())
+  .then(res=>{
+    if(res.status==true){
+      if(res.data==null){
+      alertBS("No data found, play quiz")
+      el.classList.remove("disabled")
+      return 
+      }
+
+      let allData=JSON.parse(res.data);
+      let output="";
+      allData.forEach((data, index)=>{
+        output+=`<b>Q ${index+1}.</b> ${data.q}<br><b>Ans.</b> ${data.a}<br><b>Result:</b> ${data.c}<br><hr>`
+      }) 
+      alertBS(output)
+    } else { alertBS(res.message) }
+    el.classList.remove("disabled")
+  })
+  .catch(err=>{
+    alertBS(err)
+  el.classList.remove("disabled")
+ })
+}
+
+
+
+finalPageBtn.addEventListener("click", ()=>{
+  sessionStorage.setItem("uid", userID)
+  document.location.href="final.html"
+})
+
+
+const updateViews=()=>{
+const pageViews=_("page-views")
+fetch('https://api.countapi.xyz/update/rexarvind/home/?amount=1').then(res =>res.json())
+.then(res=>{pageViews.innerText = res.value})
+.catch(err=>{pageViews.innerText=err})
+}
+updateViews()
+
+/* update copyright year */
+const date=new Date();
+_("copyYear").innerText=date.getFullYear()

@@ -11,9 +11,9 @@ firebase.initializeApp(firebaseConfig)
 const auth=firebase.auth()
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
 const ADD_QUES=ROOT_URL+"/api/quiz/add-ques"
-const DELETE_QUES=ROOT_URL+"/api/quiz-2/delete-ques"
-const COUNT_QUES=ROOT_URL+"/api/quiz-2/count-all-ques"
-const LIMIT_QUES=ROOT_URL+"/api/quiz-2/limit-all-ques"
+const DELETE_QUES=ROOT_URL+"/api/quiz/delete-ques"
+const COUNT_QUES=ROOT_URL+"/api/quiz/count-all-ques"
+const LIMIT_QUES=ROOT_URL+"/api/quiz/limit-all-ques"
 
 
 /* customisable variable */

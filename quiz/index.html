@@ -5,6 +5,7 @@
 <title>Annual Developer Quiz</title>
 <link rel="stylesheet" href="../lib/bootstrap.min.css">
 <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="style.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,19 +30,7 @@
 <header>
 <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark py-0 border-bottom border-secondary shadow">
 <div class="container-lg">
-<a class="navbar-brand font-weight-bold py-1" href="index.html">RexArvind<span class="text-muted">.me/</span>Quiz</a>
-
-<button class="navbar-toggler shadow-none border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-<div class="navbar-nav text-center ml-auto">
-<a id="logoutBtn" class="nav-link d-none" href="#!">Logout</a>
-<a onclick="userAns(this)" class="nav-link" href="#!">My Answers</a>
-<a id="finalPageBtn" class="nav-link d-none" href="#!">My Certificate</a>
-<a href="https://instagram.com/rexarvind" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
-</div>
-</div>
-
+<a class="navbar-brand font-weight-bold py-1 mx-auto" href="index.html">RexArvind<span class="text-muted">.me/</span>Quiz</a>
 
 </div>
 </nav>
@@ -91,6 +80,18 @@
 
 
 
+<!-- fab left start -->
+<div class="position-fixed bottom-0 left-0 m-2">
+<button id="logoutBtn" class="btn btn-danger d-none"><i class="icon-switch"></i></button>
+</div>
+<!-- fab left end -->
+
+<!-- fab right start -->
+<div class="position-fixed bottom-0 right-0 m-2">
+<button id="finalPageBtn" class="btn btn-success d-none"><i class="icon-file-text2"></i></button>
+<button onclick="userAns(this)" class="btn btn-primary ml-1"><i class="icon-clipboard"></i></button>
+</div>
+<!-- fab right end -->
 
 
 <br /><br /><br /><br /><br /><br /><br /><br />

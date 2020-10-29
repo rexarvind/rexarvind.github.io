@@ -1,6 +1,6 @@
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const QUIZAPI=ROOT_URL+"/api/quiz-2/get-ques/"
-const ADD_SCORE=ROOT_URL+"/api/quiz-2/add-score"
+const QUIZAPI=ROOT_URL+"/api/quiz/get-ques/"
+const ADD_SCORE=ROOT_URL+"/api/quiz/add-score"
 const CORRECT_BONUS=4
 const MAX_TIME=30
 

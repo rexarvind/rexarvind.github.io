@@ -6,7 +6,7 @@ MAKE SURE TO UPDATE THIS ON SERVER ALSO */
 const PASS_SCORE=50
 
 const ROOT_URL="https://rex-arvind.000webhostapp.com";
-const GET_SCORE=ROOT_URL+"/api/quiz-2/get-score/";
+const GET_SCORE=ROOT_URL+"/api/quiz/get-score/";
 
 
 /* shortcut for getting elements by id */

@@ -11,10 +11,10 @@ firebase.initializeApp(firebaseConfig)
 const auth=firebase.auth()
 
 const ROOT_URL="https://rex-arvind.000webhostapp.com"
-const ADD_USER=ROOT_URL+"/api/quiz-2/add-user"
-const COUNT_HIGH_SCORE=ROOT_URL+"/api/quiz-2/count-high-score"
-const LIMIT_HIGH_SCORE=ROOT_URL+"/api/quiz-2/limit-high-score.php"
-const USER_ANS=ROOT_URL+"/api/quiz-2/user-ans/"
+const ADD_USER=ROOT_URL+"/api/quiz/add-user"
+const COUNT_HIGH_SCORE=ROOT_URL+"/api/quiz/count-high-score"
+const LIMIT_HIGH_SCORE=ROOT_URL+"/api/quiz/limit-high-score.php"
+const USER_ANS=ROOT_URL+"/api/quiz/user-ans/"
 
 /* high score results per page */
 let rpp = 6;

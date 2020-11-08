@@ -1,0 +1,149 @@
+<!doctype html><html lang="en" class="h-100"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Code Snippets</title>
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+<link rel="stylesheet" href="lib/a11y-dark.css">
+<style>.showTag:target {display:block;position:relative;visibility:hidden;top:-75px;}</style>
+</head><body class="d-flex flex-column h-100">
+<header>
+<nav class="navbar fixed-top navbar-expand-sm py-0 shadow bg-light">
+<div class=" overflow-auto p-2" style="white-space:nowrap">
+<a href="#bootstrap" class="btn btn-outline-dark btn-sm font-weight-bold bg-gradient rounded-pill mr-2">Bootstrap</a>
+
+<a href="#js" class="btn btn-outline-dark btn-sm font-weight-bold bg-gradient rounded-pill mr-2">JavaScript</a>
+
+<a href="#php" class="btn btn-outline-dark btn-sm font-weight-bold bg-gradient rounded-pill mr-2">PHP</a>
+
+<a href="#mysql" class="btn btn-outline-dark btn-sm font-weight-bold bg-gradient rounded-pill mr-2">MySQL</a>
+
+<a href="#firebase" class="btn btn-outline-dark btn-sm font-weight-bold bg-gradient rounded-pill mr-2">Firebase Authentication</a>
+</div>
+</nav>
+</header>
+<main class="flex-shrink-0 pt-5">
+<div class="container pt-5">
+
+
+
+
+
+
+
+
+
+
+<h2 id="css">CSS</h2>
+<pre><code>/* Show Anchor Tag with Fixed Header */
+.showTag:target {
+display:block; position:relative;
+visibility:hidden; top:-96px /* Height of Header */}</code></pre>
+
+<h2 id="bootstrap">Bootstrap</h2>
+
+
+
+
+
+
+<a id="js" class="showTag"></a>
+<h2 class="text-center">JavaScript</h2>
+
+
+<pre><code>// Fetch API GET Request
+fetch('https://jsonplaceholder.typicode.com/todos')
+.then(res=>res.json())
+.then(res=>console.log(res))
+.catch(err=>console.log(err))</code></pre>
+
+
+<pre><code>// Fetch API POST Request
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: null
+})
+.then(res=>res.json())
+.then(res=>console.log(res))
+.catch(err=>console.log(err))</code></pre>
+
+
+<pre><code>// Get DOM Elements
+const _=x=>document.getElementById(x)
+const qsa=x=>document.querySelectorAll(x)
+const appBar=_('appBar')</code></pre>
+
+<pre><code>// Dynamic Copyright Year
+_('copyYear').innerText=new Date().getFullYear()</code></pre>
+
+<pre><code>// Add commas in numbers
+const numWithCommas=x=>{
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</code></pre>
+
+<pre><code>// Trim or Shave extra characters
+const shave=(s, n)=>(s.length>n) ? s.substr(0, n-2)+'..' : s;</code></pre>
+
+
+
+<pre><code>// Shuffle Array
+const shuffle=arr=>{
+let currentIndex=arr.length
+  let tempValue
+  let randomIndex
+  while (0 !== currentIndex){
+    randomIndex=Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1
+    tempValue=arr[currentIndex]
+    arr[currentIndex]=arr[randomIndex]
+    arr[randomIndex]=tempValue
+  }
+  return arr
+}</code></pre>
+
+
+<h2 id="php">PHP</h2>
+
+
+<h2 id="mysql">MySQL</h2>
+
+
+
+
+<h2 id="firebase">Firebase Authentication</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Toolbox</h2>
+<h3>PHP</h3>
+<p>PDO (PHP Data Objects), GD Library, fPDF.</p>
+
+<h3>.htaccess</h3>
+<p>Remove extension, rewrite urls, redirect to https, cache static resources.</p>
+
+</div>
+</main>
+<footer class="footer mt-auto py-2 text-light bg-secondary bg-gradient">
+<div class="container text-center">
+RexArvind Web Services &copy;
+</div></footer>
+<script src="lib/highlight.pack.js"></script>
+<script>
+
+
+
+hljs.initHighlightingOnLoad()
+</script></body></html>

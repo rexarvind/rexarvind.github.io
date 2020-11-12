@@ -1,8 +1,8 @@
 <!doctype html><html lang="en" class="h-100">
-<head><meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RexArvind Web Services</title>
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>RexArvind Web Services</title>
+
+<link rel="stylesheet" href="lib/bootstrap.css">
+<link rel="stylesheet" href="style.css">
 
 <meta property="article:author" content="RexArvind Web Services" />
 <meta name="author" content="RexArvind Web Services" />
@@ -15,13 +15,10 @@
 <meta name="language" content="English" />
 <meta name="robots" content="index,follow" />
 
-<link rel="canonical" href="https://rexarvind.github.io/">
-<link rel="preconnect" href="https://rexarvind.github.io/" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin
+<link rel="canonical" href="https://rexarvind.me/">
+<link rel="preconnect" href="https://rexarvind.me/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="preconnect" href="https://api.countapi.xyz/" crossorigin>
-
-<link rel="stylesheet" href="lib/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,6 +47,7 @@
 <meta name="twitter:site" content="@rexarvind" />
 <meta name="twitter:creator" content="@rexarvind" />
 <style type="text/css">
+html{scroll-behavior:smooth}
 img.lazyload:not([src]){visibility:hidden !important}
 .form-control:focus,.form-check-input:focus
 {box-shadow:0 0 0 0.2rem rgba(22,22,22,0.25);
@@ -57,7 +55,6 @@ border-color:#222222}
 .form-check-input:checked{border-color:#222222;background-color:#222222}
 #socialIcons a{text-decoration:none;font-size:32px;color:#222222;margin-right:2px;padding:5px}
 #socialIcons a:hover{color:rgba(22,22,22,0.8)}
-
 .shake {animation:shake 3s infinite;
 transform: translate3d(0, 0, 0);
 backface-visibility: hidden}
@@ -71,10 +68,7 @@ backface-visibility: hidden}
 <header>
 <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light py-1 border-bottom border-secondary shadow">
 <div class="container-lg">
-
-<a class="navbar-brand font-weight-bold" href="index.html">RexArvind<span class="text-muted">.me</span>
-</a>
-
+<a class="navbar-brand font-weight-bold" href="index.html">RexArvind<span class="text-muted">.me</span></a>
 <a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello,%20Arvind" class="btn btn-success btn-sm font-weight-bold shadow-none bg-gradient">Live Chat</a>
 </div>
 </nav>
@@ -90,7 +84,7 @@ backface-visibility: hidden}
 <div class="col-sm-6">
 <h1>Get Your Own Piece of Internet, Today&#33; &#127880;</h1>
 <p>If you need a fast, affordable and designer website with an app like experience, then you are at the right place.</p>
-<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello%2C%20Arvind%0AI%20have%20a%20project%20for%20you..." class="btn btn-dark font-weight-bold bg-gradient">Start for FREE</a>
+<a href="https://api.whatsapp.com/send?phone=918181040977&text=Hello%2C%20Arvind%0AI%20have%20a%20project%20for%20you..." class="btn btn-dark font-weight-bold bg-gradient shake">Start for FREE</a>
 <a class="btn btn-success font-weight-bold bg-gradient ml-2 d-none">Download CV</a>
 </div>
 
@@ -100,13 +94,13 @@ backface-visibility: hidden}
 
 <div class="carousel-inner rounded">
 <div class="carousel-item active">
-<img src="" data-src="img/rct.webp" class="lazyload d-block w-100" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)" />
+<img src="img/dummy/hd720.svg" data-src="img/rct.webp" class="lazyload d-block w-100" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)" />
 </div>
 <div class="carousel-item">
-<img src="" data-src="img/bffb.webp" class="lazyload d-block w-100" alt="Be Fit For Benefit" onclick="imgOpen(this)" />
+<img src="img/dummy/hd720.svg" data-src="img/bffb.webp" class="lazyload d-block w-100" alt="Be Fit For Benefit" onclick="imgOpen(this)" />
 </div>
 <div class="carousel-item">
-<img src="" data-src="img/netfliks.webp" class="lazyload d-block w-100" alt="Nelfliks Landing Page" onclick="imgOpen(this)" />
+<img src="img/dummy/hd720.svg" data-src="img/netfliks.webp" class="lazyload d-block w-100" alt="Nelfliks Landing Page" onclick="imgOpen(this)" />
 </div>
 </div>
 <a class="carousel-control-prev" href="#heroCarousel" aria-label="previous" role="button" data-slide="prev">
@@ -126,14 +120,42 @@ backface-visibility: hidden}
 
 <!-- projects area start -->
 <section class="py-5 bg-light"><div class="container-lg">
+<div id="projects" class="row g-3">
 
-<div id="projects" class="row g-3"></div>
+<div class="col-sm-6 col-md-4">
+<div class="card border-secondary shadow">
+<img src="img/dummy/hd720.svg" data-src="projects/ranjan-commerce-tutorials.webp" class="lazyload card-img-top" alt="Ranjan Commerce Tutorials" onclick="imgOpen(this)">
+<div class="card-footer p-1 border-secondary">
+<a href="https://ranjancommercetutorials.000webhostapp.com/" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">Ranjan Commerce Tutorials &#8599;</a></div></div></div>
 
+<div class="col-sm-6 col-md-4">
+<div class="card border-secondary shadow">
+<img src="img/dummy/hd720.svg" data-src="projects/quiz.webp" class="lazyload card-img-top" alt="Quiz Web App" onclick="imgOpen(this)">
+<div class="card-footer p-1 border-secondary">
+<a href="quiz/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">Quiz Web App &#8599;</a></div></div></div>
+
+<div class="col-sm-6 col-md-4">
+<div class="card border-secondary shadow">
+<img src="img/dummy/hd720.svg" data-src="projects/js-api.webp" class="lazyload card-img-top" alt="JavaScript API Playground" onclick="imgOpen(this)">
+<div class="card-footer p-1 border-secondary">
+<a href="api/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">JavaScript API Playground &#8599;</a></div></div></div>
+
+
+<div class="col-sm-6 col-md-4">
+<div class="card border-secondary shadow">
+<img src="img/dummy/hd720.svg" data-src="projects/app-landing-page.webp" class="lazyload card-img-top" alt="App Landing Page" onclick="imgOpen(this)">
+<div class="card-footer p-1 border-secondary">
+<a href="1/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">App Landing Page &#8599;</a></div></div></div>
+
+<div class="col-sm-6 col-md-4">
+<div class="card border-secondary shadow">
+<img src="img/dummy/hd720.svg" data-src="projects/darpan-agarbatti.webp" class="lazyload card-img-top" alt="Darpan Agarbatti" onclick="imgOpen(this)">
+<div class="card-footer p-1 border-secondary">
+<a href="https://darpanagarbatti.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">Darpan Agarbatti &#8599;</a></div></div></div>
+
+</div>
 </div></section>
 <!-- projects area end -->
-
-
-
 
 
 <!-- features area start -->
@@ -287,7 +309,7 @@ backface-visibility: hidden}
 <div class="row">
 
 <div class="col-sm-4">
-<img data-src="img/arvind-kumar.webp" alt="Arvind Kumar" class="lazyload img-fluid rounded mb-3" onclick="imgOpen(this)" />
+<img src="img/dummy/hd720.svg" data-src="img/arvind-kumar.webp" alt="Arvind Kumar" class="lazyload img-fluid rounded mb-3" onclick="imgOpen(this)" />
 </div>
 <div class="col-sm-8">
 
@@ -378,9 +400,10 @@ backface-visibility: hidden}
 
 <!-- floating btn start -->
 <div class="position-fixed bottom-0 left-0 m-2">
-<button id="liteApp" class="btn btn-dark btn-sm font-weight-bold bg-gradient shake d-none">Lite App</button>
+<button id="liteApp" class="btn btn-dark btn-sm font-weight-bold bg-gradient d-none shake">Lite App</button>
 </div>
 <!-- floating btn end -->
+
 
 </main>
 
@@ -402,7 +425,7 @@ backface-visibility: hidden}
 <!-- footer end -->
 
 <script src="lib/lazysizes.min.js"></script>
-<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="lib/bootstrap.bundle.js"></script>
 <script>
 const _=(id)=>document.getElementById(id)
 
@@ -413,10 +436,11 @@ const projects=_("projects")
 fetch("https://rexarvind.github.io/lib/projects.json").then(res=>res.json())
 .then(res=>{
 res.forEach(data=>{
+/*
 projects.innerHTML+=`
 <div class="col-sm-6 col-md-4">
 <div class="card border-secondary shadow">
-<img data-src="projects/${data.img}" class="lazyload card-img-top" alt="${data.text}" onclick="imgOpen(this)">
+<img src="img/dummy/hd720.svg" data-src="projects/${data.img}" class="lazyload card-img-top" alt="${data.text}" onclick="imgOpen(this)">
 <div class="card-footer p-1 border-secondary">
 <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block btn-sm shadow-none font-weight-bold text-truncate bg-gradient">${data.text}&#8599;</a></div>
 
@@ -424,6 +448,7 @@ projects.innerHTML+=`
 </div>
 `
 
+*/
 })
 
 
@@ -433,7 +458,7 @@ projects.innerHTML+=`
 const imgOpen=el=>{
 let modal=new bootstrap.Modal(_("rexModal"));
 _("rexModalBody").innerHTML=`
-<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
+<img src="img/dummy/hd720.svg" data-src="${el.src}" class="lazyload img-fluid" alt="el.alt">
 <p class="text-center p-2 mb-0">${el.alt}</p>`;
 modal.toggle()}
 

@@ -1,0 +1,18 @@
+<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="none">
+      <defs>
+        <style type="text/css">
+          #holder text {
+            fill: #000000;
+            font-family: Open Sans;
+            font-size: 99px;
+            font-weight: 200;
+          }
+        </style>
+      </defs>
+      <g id="holder">
+        <rect width="100%" height="100%" fill="#fafafa"></rect>
+        <g>
+          <text text-anchor="middle" x="50%" y="50%" dy=".3em">Loading...</text>
+        </g>
+      </g>
+    </svg>

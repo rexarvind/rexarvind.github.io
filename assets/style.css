@@ -2,7 +2,8 @@ body{font-family:'Rubik', san-serif}
 
 .bg-light{background: rgba(240, 249, 255,0.4) !important}
 
-.btn{font-weight:500}
+.btn{font-weight:500; background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))}
+.btn-primary{background-color:#1565c0 !important;border-color:#1565c0 !important}
 
 .container {position: relative}
 
